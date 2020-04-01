@@ -1,0 +1,20 @@
+{
+  "name": "wally-viagens",
+  "version": "1.0.0",
+  "description": "Projeto integrador do curso Full Stack Web Development @ Digital House.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatianazilio/wally-viagens.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tatianazilio/wally-viagens/issues"
+  },
+  "homepage": "https://github.com/tatianazilio/wally-viagens#readme"
+}
