@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: blue;
 }
@@ -28,4 +27,21 @@ a {
   background-color: rgb(44, 44, 44);
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+/* Index */
+
+#principal-home {
+  padding: 0;
+}
+
+#foto-principal {
+  background-image: url('../../images/foto-principal.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+#formulario-de-pesquisa {
+  min-height: 70vh;
+  width: 40vw;
 }
