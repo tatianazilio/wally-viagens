@@ -97,6 +97,11 @@ h6 {
   color: white;
 }
 
+.botao-slide {
+  background-color: gray;
+  border-radius: 15px;
+}
+
 /* Index */
 
 #principal-home {
