@@ -38,8 +38,4 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-// server
-
-app.listen(3030, () => console.log("Servidor Rodando!"));
-
 module.exports = app;
