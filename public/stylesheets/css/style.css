@@ -1,6 +1,5 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: blue;
 }
 
 a {
@@ -41,7 +40,23 @@ a {
   background-size: cover;
 }
 
-#formulario-de-pesquisa {
-  min-height: 70vh;
-  width: 40vw;
+#caixa-de-busca {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 2%;
+}
+
+.destaques {
+  color: gray;
+}
+
+.destaques > h3 {
+  color: #f95f62ff;
+}
+
+.card-deck {
+  margin-left: 7%;
+  margin-right: 7%;
 }
