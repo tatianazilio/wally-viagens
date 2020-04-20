@@ -102,6 +102,10 @@ h6 {
   border-radius: 15px;
 }
 
+.card-link {
+  color: rgb(104, 104, 104);
+}
+
 /* Index */
 
 #principal-home {
