@@ -1,4 +1,4 @@
-/* Estruturas Gerais */
+/* ESTRUTURAS GERAIS */
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -12,7 +12,7 @@ h6 {
   font-family: "Lucida Grande";
 }
 
-/* Bootstrap */
+/* BOOTSTRAP */
 
 .btn-link {
   font-family: "Lucida Grande";
@@ -32,7 +32,7 @@ h6 {
   text-decoration: none;
 }
 
-/* Header e Footer */
+/* HEADER E FOOTER */
 
 .navbar {
   padding: 0px;
@@ -87,7 +87,7 @@ h6 {
   text-align: center;
   border-radius: 50%;
   background-color: rgb(44, 44, 44);
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .fa:hover {
@@ -106,7 +106,93 @@ h6 {
   color: rgb(104, 104, 104);
 }
 
-/* Index */
+/* MODAIS */
+
+.modal-content {
+  width: 500px;
+  border-radius: 10px;
+}
+
+.modal-header {
+  margin: 0 auto;
+  border-bottom-style: none;
+}
+
+.modal-body {
+  margin: 25px;
+}
+
+.close span {
+  float: left;
+  margin: 20px;
+}
+
+.texto-login {
+  font-family: "Lucida Grande";
+  padding-bottom: 15px;
+  padding-top: 40px;
+  margin: 0 auto;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(222, 226, 230);
+
+}
+
+.form-group {
+  margin: 0;
+}
+
+.form-control {
+  width: 100%;
+  height: 45px;
+}
+
+::-webkit-input-placeholder {
+  font-family: "Lucida Grande";
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.btn-primary {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 45px;
+  border-radius: 8px;
+  background-color: #f95f62ff;
+  border-style: none;
+}
+
+.btn-primary:hover {
+  background-color: rgb(255, 87, 90);
+}
+
+.btn-primary:focus {
+  background-color: rgb(255, 87, 90);
+}
+
+/* AGENTE DE VIAGENS */
+
+#agente-de-viagens.modal-dialog {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#agente-de-viagens.modal-content {
+  background-color: sandybrown;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+}
+
+#agente-de-viagens.modal-header {
+  margin-left: 0;
+}
+
+/* INDEX */
 
 #principal-home {
   padding: 0;
@@ -130,7 +216,7 @@ h6 {
   color: gray;
 }
 
-.destaques > h3 {
+.destaques>h3 {
   color: #f95f62ff;
 }
 
