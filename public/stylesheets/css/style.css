@@ -226,7 +226,7 @@ h6 {
 }
 
 #pagamento {
-background-color: #00b7ff;
+background-color: #a6ddf3;
 border-radius: 12px;
 padding: 2%;
 margin: 2%;
@@ -257,4 +257,9 @@ justify-content: center;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+}
+
+#pagamento>h3{
+  color:#f95f62ff
+
 }
