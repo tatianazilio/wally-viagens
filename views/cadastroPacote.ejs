@@ -1,20 +1,57 @@
 <!DOCTYPE html>
 <html>
 <%- include('partials/head', {title:"Cadastre seu pacote"}) %>
-  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+<body>
+  <div class="nav cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <%- include('partials/header') %>
-    
-    <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
+
+  <main class="cadastrar-pacote mt-5">
+    <div class="jumbotron col-8 mx-auto">
+      <h1 class="display-6">Cadastre seu pacote!</h1>
+      <p class="lead">Você poderá oferecer mais uma opção de viagem para nossos usuários e, em poucos passos, ela já
+        estará no ar. Só precisamos obter algumas informações.</p>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
+      <form>
+        <div class="form-group">
+          <label for="nome">Dê um nome ao seu pacote:</label>
+          <input type="text" class="form-control" id="nome" placeholder="Exemplo: Carnaval em Porto Seguro 5 noites com aéreo">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Example select</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect2">Example multiple select</label>
+          <select multiple class="form-control" id="exampleFormControlSelect2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Example textarea</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+      </form>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+  </main>
 
 
 
-    <%- include('partials/footer') %>
+  <%- include('partials/footer') %>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
