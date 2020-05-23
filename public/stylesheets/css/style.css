@@ -182,7 +182,7 @@ h6 {
 
 }
 
-.form-group {
+.form-login {
   margin: 0;
 }
 
@@ -268,8 +268,14 @@ h6 {
 
 /* CADASTRO PACOTE */
 
-.nav {
+.nav-rosa {
   background-color: #f95f62ff;
+}
+
+#cadastrar-pacote {
+  background-image: url(../../images/planning.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* PAGAMENTO */
