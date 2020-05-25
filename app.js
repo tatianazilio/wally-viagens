@@ -8,7 +8,8 @@ const indexRouter = require("./routes/indexRoute");
 const usersRouter = require("./routes/usuarioRoute");
 const pagamentoRouter = require("./routes/pagamentoRoute");
 const destinoRouter = require("./routes/destinoRoute");
-const pacoteRouter = require("./routes/pacoteRoute")
+const pacoteRouter = require("./routes/pacoteRoute");
+const loginRouter = require("./routes/loginRoute");
 
 const app = express();
 
@@ -18,7 +19,9 @@ app.set("view engine", "ejs");
 
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -27,6 +30,7 @@ app.use("/usuarios", usersRouter);
 app.use("/pagamento", pagamentoRouter);
 app.use("/destino", destinoRouter);
 app.use("/pacote", pacoteRouter);
+app.use(loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
