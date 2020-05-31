@@ -6,19 +6,22 @@ module.exports = (sequelize, DataTypes) => {
                 primaryKey: true,
                 autoIncrement: true,
             },
-            nome: DataTypes.STRING,
-            dataPartida: {
+            nome: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            dataDePartida: {
                 type: DataTypes.DATE,
                 as: 'data-partida'
             },
-            dataChegada: {
+            dataDeChegada: {
                 type: DataTypes.DATE,
                 as: 'data-chegada'
             },
-            valor: DataTypes.FLOAT,
             descricao: DataTypes.STRING,
-            passagem: DataTypes.BOOLEAN,
+            preco: DataTypes.FLOAT,
             diarias: DataTypes.INTEGER,
+            aereo: DataTypes.BOOLEAN,
             /* incluir campo 1: N
             fotos: 
             */

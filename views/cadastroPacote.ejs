@@ -16,176 +16,146 @@
 
 
       <div class="container mt-5">
-        <div class="row">
-          <div class="col-3">
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
-                aria-controls="v-pills-home" aria-selected="true">Primeiros passos</a>
-              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-                aria-controls="v-pills-profile" aria-selected="false">Mais detalhes</a>
-              <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
-                aria-controls="v-pills-messages" aria-selected="false">Hospedagem</a>
-              <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
-                aria-controls="v-pills-settings" aria-selected="false">Upload the fotos</a>
+        <div class="row d-flex justify-content-center">
+          <div class="col-10">
+            <form action="/pacote/cadastro" method="POST" enctype="multipart/form-data">
+              <div class="form-row">
+                <div class="form-group col">
+                  <label for="nome">Dê um nome ao seu pacote:</label>
+                  <input type="text" class="form-control" name="nome" id="nome"
+                    placeholder="Exemplo: Carnaval em Porto Seguro 5 noites com aéreo">
+                </div>
+              </div>
+              <div class="form-row d-flex justify-content-between">
+                <div class="form-group col-md-6">
+                  <label for="data-de-partida">Data de partida:</label>
+                  <input type="date" class="form-control" name="dataDePartida" id="data-de-partida" />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="data-de-chegada">Data de chegada:</label>
+                  <input type="date" class="form-control" name="dataDeChegada" id="data-de-chegada" />
+                </div>
+              </div>
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="descricao">Adicione aqui a descrição deste pacote:</label>
+              <textarea class="form-control" name="descricao" id="descricao" rows="5"
+                placeholder="Forneça detalhes sobre o destino, hospedagem, passeios, tudo que estiver incluso."></textarea>
             </div>
-          </div>
-          <div class="col-9">
-            <div class="tab-content" id="v-pills-tabContent">
-
-              <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                aria-labelledby="v-pills-home-tab">
-                <form>
-                  <div class="form-row">
-                    <div class="form-group col">
-                      <label for="nome">Dê um nome ao seu pacote:</label>
-                      <input type="text" class="form-control" id="nome"
-                        placeholder="Exemplo: Carnaval em Porto Seguro 5 noites com aéreo">
-                    </div>
-                  </div>
-                  <div class="form-row d-flex justify-content-between">
-                    <div class="form-group col-md-6">
-                      <label for="data-de-partida">Data de partida:</label>
-                      <input type="date" class="form-control" id="data-de-partida" />
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="data-de-chegada">Data de chegada:</label>
-                      <input type="date" class="form-control" id="data-de-chegada" />
-                    </div>
-                  </div>
-                </form>
+            <div class="form-row d-flex justify-content-between">
+              <div class="form-group col-md-4">
+                <label for="preco">Valor:</label>
+                <input type="text" class="form-control" name="preco" id="preco">
               </div>
-              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                <form>
-                  <div class="form-row">
-                    <div class="form-group col-12">
-                      <label for="descricao">Adicione aqui a descrição deste pacote:</label>
-                      <textarea class="form-control" id="descricao" rows="5"
-                        placeholder="Forneça detalhes sobre o destino, hospedagem, passeios, tudo que estiver incluso."></textarea>
-                    </div>
-                    <div class="form-row d-flex justify-content-between">
-                      <div class="form-group col-md-4">
-                        <label for="preco">Valor:</label>
-                        <input type="text" class="form-control" id="preco">
-                      </div>
-                      <div class="form-group col-md-3">
-                        <label for="diarias">Diárias em hotel:</label>
-                        <select class="custom-select form-control" id="diárias" required>
-                          <option selected disabled value="">Selecione...</option>
-                          <option>0</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
-                          <option>10</option>
-                          <option>11</option>
-                          <option>12</option>
-                          <option>13</option>
-                          <option>14</option>
-                          <option>15</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-md-4">
-                        <legend class="col-form-label">Este pacote inclui aéreo?</legend>
-                        <div class="custom-control custom-radio custom-control-inline">
-                          <input type="radio" id="aereoS" name="aereo" class="custom-control-input">
-                          <label class="custom-control-label" for="aereoS">Sim</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                          <input type="radio" id="aereoN" name="aereo" class="custom-control-input">
-                          <label class="custom-control-label" for="aereoN">Não</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+              <div class="form-group col-md-3">
+                <label for="diarias">Diárias em hotel:</label>
+                <select class="custom-select form-control" name="diarias" id="diarias" required>
+                  <option selected disabled value="">Selecione...</option>
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                  <option>13</option>
+                  <option>14</option>
+                  <option>15</option>
+                </select>
               </div>
-              <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                <form>
-                  <div class="form-row">
-                    <div class="form-group col-6">
-                      <label for="hospedagem-local">Digite a cidade da hospedagem:</label>
-                      <input type="text" class="form-control" id="hospedagem-local">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="hospedagem-nome-hotel">Nome do hotel:</label>
-                      <input type="text" class="form-control" id="hospedagem-nome-hotel">
-                    </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="hospedagem-data-de-entrada">Data de entrada:</label>
-                      <input type="date" class="form-control" id="hospedagem-data-de-entrada" />
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="hospedagem-data-de-saida">Data de saída:</label>
-                      <input type="date" class="form-control" id="hospedagem-data-de-entrada" />
-                    </div>
-                  </div>
-                  <div class="form-row d-flex justify-content-between">
-                    <div class="form-group col-md-3">
-                      <label for="hospedagem-pessoas">Pessoas por quarto:</label>
-                      <select class="custom-select form-control id=" hospedagem-pessoas" required>
-                        <option selected disabled value="">Selecione...</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-3">
-                      <label for="hospedagem-estrelas">Estrelas:</label>
-                      <select class="custom-select form-control id=" hospedagem-estrelas" required>
-                        <option selected disabled value="">Selecione...</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-3">
-                      <legend class="col-form-label">Inclui refeições?</legend>
-                      <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="hospedagem-refeicaoS" name="hospedagem-refeicao"
-                          class="custom-control-input">
-                        <label class="custom-control-label" for="hospedagem-refeicaoS">Sim</label>
-                      </div>
-                      <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="hospedagem-refeicaoN" name="hospedagem-refeicao"
-                          class="custom-control-input">
-                        <label class="custom-control-label" for="hospedagem-refeicaoN">Não</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-12">
-                      <label for="hospedagem-descricao">Adicione aqui uma breve descrição sobre o hotel:</label>
-                      <textarea class="form-control" id="hospedagem-descricao" rows="2"
-                        placeholder="Forneça detalhes sobre o localização, comodidades, etc."></textarea>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                <form>
-                  <div class="form-group">
-                    <label for="imagem">Faça o upload das fotos desde pacote:</label>
-                    <input type="file" class="form-control-file" id="imagem">
-                  </div>
-                  <div class="d-flex justify-content-end">
-                    <button type="submit" class="btn btn-secondary mb-2">Estamos prontos!</button>
-                  </div>
-                </form>
+              <div class="form-group col-md-4">
+                <legend class="col-form-label">Este pacote inclui aéreo?</legend>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" id="aereoS" name="aereo" class="custom-control-input">
+                  <label class="custom-control-label" for="aereoS">Sim</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" id="aereoN" name="aereo" class="custom-control-input">
+                  <label class="custom-control-label" for="aereoN">Não</label>
+                </div>
               </div>
             </div>
           </div>
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="hospedagem-local">Digite a cidade da hospedagem:</label>
+              <input type="text" class="form-control" name="hospedagemLocal" id="hospedagem-local">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="hospedagem-nome-hotel">Nome do hotel:</label>
+              <input type="text" class="form-control" name="hospedagemNomeDoHotel" id="hospedagem-nome-hotel">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="hospedagem-data-de-entrada">Data de entrada:</label>
+              <input type="date" class="form-control" name="hospedagemDataDeEntrada" id="hospedagem-data-de-entrada" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="hospedagem-data-de-saida">Data de saída:</label>
+              <input type="date" class="form-control" name="hospedagemDatadDeSaida" id="hospedagem-data-de-entrada" />
+            </div>
+          </div>
+          <div class="form-row d-flex justify-content-between">
+            <div class="form-group col-md-3">
+              <label for="hospedagem-pessoas">Pessoas por quarto:</label>
+              <select class="custom-select form-control" name="hospedagemPessoas" id="hospedagem-pessoas" required>
+                <option selected disabled value="">Selecione...</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="hospedagem-estrelas">Estrelas:</label>
+              <select class="custom-select form-control" name="hospedagemEstelas" id=" hospedagem-estrelas" required>
+                <option selected disabled value="">Selecione...</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <legend class="col-form-label">Inclui refeições?</legend>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="hospedagem-refeicaoS" name="hospedagemRefeicao" class="custom-control-input">
+                <label class="custom-control-label" for="hospedagem-refeicaoS">Sim</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="hospedagem-refeicaoN" name="hospedagemRefeicao" class="custom-control-input">
+                <label class="custom-control-label" for="hospedagem-refeicaoN">Não</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="hospedagem-descricao">Adicione aqui uma breve descrição sobre o hotel:</label>
+              <textarea class="form-control" name="hospedagemDescricao" id="hospedagem-descricao" rows="2"
+                placeholder="Forneça detalhes sobre o localização, comodidades, etc."></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="imagem">Faça o upload das fotos desde pacote:</label>
+            <input type="file" class="form-control-file" name="imagem" id="imagem">
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-secondary mb-2">Estamos prontos!</button>
+          </div>
+          </form>
         </div>
       </div>
+    </div>
+    </div>
+    </div>
     </div>
   </main>
 
