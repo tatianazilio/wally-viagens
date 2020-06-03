@@ -281,13 +281,30 @@ h6 {
 /* PAGAMENTO */
 
 #pagamento {
-  background-color: #a6ddf3;
+  background-color: rgb(177, 177, 177);
   border-radius: 12px;
   padding: 2%;
   margin: 2%;
   align-items: center;
   justify-content: center;
 
+}
+#pagamento .btn-success{
+  background-color: grey;
+  border-color: rgb(138, 138, 138);
+}
+
+
+.imagem-resumo {
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resumo-viagem{
+ 
+display: flexbox;
+justify-content: none;
 }
 
 #pgto1 {
@@ -314,6 +331,7 @@ h6 {
   width: 100%;
 }
 
-#pagamento>h3 {
-  color: #f95f62ff
+#pagamento h3 {
+  color: #000000
 }
+

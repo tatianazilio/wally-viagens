@@ -15,200 +15,225 @@
         <%- include('./partials/header') %>
     </div>
 
-    <div>
+    <!-- dados de pagamento e resumo da viagem -->
+    <div id="pgto1">
+        <div class="col-md-6" id="pagamento">
 
-        <div id="pgto1">
-            <div class="col-md-6" id="pagamento">
-
-                <h3>Dados do pagamento</h3>
-
+            <h3>Dados do pagamento</h3>
 
 
-                <form>
 
-                    <div class="d-flex flex-wrap">
+            <form>
 
-                        <div class="form-check col-12">
+                <div class="d-flex flex-wrap">
 
-                            <input type="radio" id="cartao" name="formaDePagamento" value="cartao">
-                            <label for="cartao">
-                                Cartão de Crédito
-                            </label>
-                        </div>
+                    <div class="form-check col-12">
 
-                        <div class="form-group col-12">
-                            <label for="numeroDoCartao">Número do Cartão</label>
-                            <input type="number" class="form-control" id=numeroDoCartao name="numeroDoCartao" placeholder="Número do cartão">
-                        </div>
-
-                        <div class="form-group col-6">
-                            <label for="dataDeVencimento">Vencimento</label>
-                            <input type="date" class="form-control" id=mesDeVencimento name="mesDeVencimento">
-                        </div>
-
-                        <div class="form-group col-6">
-                            <label for="numeroDeVerificacao">Dígito verificador</label>
-                            <input type="number" class="form-control" id="numeroDeVerificacao"
-                                name="numeroDeVerificacao" placeholder="Dígito de verificação">
-
-                        </div>
-
-                        <div class="form-group col-12">
-                            <label for="nomeNoCartao">Nome no Cartão</label>
-                            <input type="text" class="form-control" id="nomeNoCartao" name="nomeNoCartao"
-                                placeholder="Nome no cartão">
-                        </div>
-
-                        <br>
-
-                        <div class="form-check col-12">
-                            <input type="radio" id="boleto" name="formaDePagamento" value="boleto">
-                            <label for="boleto">Boleto Bancário</label>
-
-
-                        </div>
+                        <input type="radio" id="cartao" name="formaDePagamento" value="cartao">
+                        <label for="cartao">
+                            Cartão de Crédito
+                        </label>
                     </div>
-                </form>
+
+                    <div class="form-group col-12">
+                        <label for="numeroDoCartao">Número do Cartão</label>
+                        <input type="number" class="form-control" id=numeroDoCartao name="numeroDoCartao"
+                            placeholder="Número do cartão">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="dataDeVencimento">Vencimento</label>
+                        <input type="date" class="form-control" id=mesDeVencimento name="mesDeVencimento">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="numeroDeVerificacao">Dígito verificador</label>
+                        <input type="number" class="form-control" id="numeroDeVerificacao" name="numeroDeVerificacao"
+                            placeholder="Dígito de verificação">
+
+                    </div>
+
+                    <div class="form-group col-12">
+                        <label for="nomeNoCartao">Nome no Cartão</label>
+                        <input type="text" class="form-control" id="nomeNoCartao" name="nomeNoCartao"
+                            placeholder="Nome no cartão">
+                    </div>
+
+                    <br>
+
+                    <div class="form-check col-12">
+                        <input type="radio" id="boleto" name="formaDePagamento" value="boleto">
+                        <label for="boleto">Boleto Bancário</label>
 
 
-            </div>
+                    </div>
+                </div>
+            </form>
 
-
-            <div class="col-md-4" id="pagamento">
-                <h3>
-                    Resumo da viagem
-                </h3>
-
-                <p>
-                    Valor do pacote
-                </p>
-                <p>
-                    Valor R$3,999,00
-                </p>
-                <p>
-                    Taxas
-                </p>
-
-                <p>
-                    Total<br>
-                    R$3,999,99
-                </p>
-
-
-
-
-            </div>
 
         </div>
-        <div id="pgto3">
-            <div id="pgto2">
 
 
-                <div class="d-flex col-11" id="pagamento">
+        <div id="pagamento" class="col-md-4 resumo-viagem">
+            <h3>
+                Resumo da viagem
+            </h3>
 
-                    <div class="d-flex flex-wrap">
+            <p>
+                Valor do pacote
+            </p>
+            <p>
+                Valor R$3,999,00
+            </p>
+            <p>
+                Taxas
+            </p>
+
+            <p>
+                Total<br>
+                R$3,999,99
+            </p>
 
 
-                        <h3 style="color:#f95f62ff;"> Dados do pagante
-                        </h3>
 
 
-                        <form>
-                            <div class="d-flex flex-wrap">
+        </div>
 
-                                <div class="form-group col-sm-9">
-                                    <label for="nomeCompleto">Nome Completo</label>
-                                    <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" placeholder="Nome Completo"> 
-                                </div>
+    </div>
 
-                                <div class="form-group col-sm-3">
-                                    <label for="dataDeNascimento">Data de nascimento</label>
-                                    <input type="date" class="form-control" id="dataDeNascimento"
-                                        name="dataDeNascimento">
-                                </div>
 
-                                <div class="form-group col-sm-4">
-                                    <label for="CPF">CPF</label>
-                                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF">
-                                </div>
+    <div id="pgto3">
+        <!-- div para centralizar -->
 
-                                <div class="form-group col-sm-4">
-                                    <label for="genero">Sexo</label>
-                                    <select class="custom-select" id="genero" required>
-                                        <option selected disabled value="">Selecione...</option>
-                                        <option>Masculino</option>
-                                        <option>Feminino</option>
-                                    </select>
-                                </div>
 
-                                <div class="form-group col-sm-4">
-                                    <label for="telefone">Telefone</label>
-                                    <input type="text" class="form-control" id="telefone" name="telefone"
-                                        placeholder="Telefone">
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label for="endereco">Endereço</label>
-                                    <input type="text" class="form-control" id="endereco" name="endereco"
-                                        placeholder="Endereço" size="50">
-                                </div>
-                                <div class="form-group col-sm-3">
-                                    <label for="numero">Número</label>
-                                    <input type="text" class="form-control" id="numero" name="numero" placeholder="Número"
-                                        size="10">
-                                </div>
-                                <div class="form-group col-sm-3">
-                                    <label for="complemento">Complemento</label>
-                                    <input type="text" class="form-control" id="complemento" name="complemento"
-                                        placeholder="Complemento" size="10">
-                                </div>
+        <div id="pgto2">
+
+
+            <div class="d-flex col-11" id="pagamento">
+
+                <div class="d-flex flex-wrap">
+
+
+                    <h3>Dados do pagante</h3>
+
+
+                    <form>
+                        <div class="d-flex flex-wrap">
+
+                            <div class="form-group col-sm-9">
+                                <label for="nomeCompleto">Nome Completo</label>
+                                <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto"
+                                    placeholder="Nome Completo">
                             </div>
-                        </form>
 
-                    </div>
-                </div>
+                            <div class="form-group col-sm-3">
+                                <label for="dataDeNascimento">Data de nascimento</label>
+                                <input type="date" class="form-control" id="dataDeNascimento" name="dataDeNascimento">
+                            </div>
 
-                <div class="col-11" id="pagamento">
-                    <div class="d-flex flex-wrap">
-                        <h3 class="col-12" style="color:#f95f62ff;">
-                            Resumo do Pedido
-                        </h3>
-                        <div class="col-3">
-                            <img src="../../images/destaques-ex1-tahiti.jpg" class="img-fluid" alt="Tahiti">
-                        </div>
-                        <div class=col-9>
-                            <h5>Bora Bora</h5>
-                            <p>Um verdadeiro paraíso tropical, com praias cristalinas, recifes de corais, areia
-                                branca e românticos bangalôs sobre a água.</p>
-                            <p>
-                                Quantidade de dias: 1.
-                            </p>
-                            <p>
-                                Alimentação: tudo incluso.
-                            </p>
-                            <p>
-                                Quartos Sinta-se em casa em um de nossos 394 quartos com ar-condicionado e TVs LCD. Sua
-                                cama Tempur-Pedic apresenta roupas de cama premium. O Wi-Fi de cortesia mantém você
-                                conectado e há programas a cabo para sua diversão. Banheiro privativo possui produtos de
-                                toalete de grife e secadores de cabelo.Comodidades Aproveite as instalações recreativas,
-                                que incluem quadras de tênis descobertas, uma piscina externa e uma academia. Este hotel
-                                oferece comodidades como Wi-Fi de cortesia, serviços de concierge e sala de jogos. É
-                                fácil passar um dia de muita diversão com o traslado de cortesia para o parque
-                                temático.Alimentação Saboreie pratos da culinária americana no American Kitchen Grill,
-                                um restaurante familiar que oferece um bar. Você também pode se hospedar no local e
-                                aproveitar o serviço de quarto 24 horas. Relaxe com uma bebida refrescante em um bar ao
-                                lado da piscina ou em um dos 2 bares/lounges. Há café da manhã (buffet) disponível
-                                diariamente, entre 7h00 e 11h00, mediante uma taxa.
-                            </p>
-                        </div>
-                    </div>
+                            <div class="form-group col-sm-4">
+                                <label for="CPF">CPF</label>
+                                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF">
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                <label for="genero">Sexo</label>
+                                <select class="custom-select" id="genero" required>
+                                    <option selected disabled value="">Selecione...</option>
+                                    <option>Masculino</option>
+                                    <option>Feminino</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                <label for="telefone">Telefone</label>
+                                <input type="text" class="form-control" id="telefone" name="telefone"
+                                    placeholder="Telefone">
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="endereco">Endereço</label>
+                                <input type="text" class="form-control" id="endereco" name="endereco"
+                                    placeholder="Endereço" size="50">
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label for="numero">Número</label>
+                                <input type="text" class="form-control" id="numero" name="numero" placeholder="Número"
+                                    size="10">
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label for="complemento">Complemento</label>
+                                <input type="text" class="form-control" id="complemento" name="complemento"
+                                    placeholder="Complemento" size="10">
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                <label for="estado">Estado</label>
+                                <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado"
+                                    size="20">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="cidade">Cidade</label>
+                                <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade"
+                                    size="20">
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                <label for="bairro">Bairro</label>
+                                <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro"
+                                    size="20">
+                            </div>
+
+                            <div class="col-12">
+                            <button type="button" class="btn btn-success col-12">Confirmar pagamento</button>
+                            </div>
+                    </form>
+
                 </div>
             </div>
-
-
         </div>
+
+        <div class="col-11" id="pagamento">
+            <div class="d-flex flex-wrap">
+                <h3 class="col-12">
+                    Resumo do Pedido
+                </h3>
+                <div class="col-3 imagem-resumo">
+                    <img src="../../images/destaques-ex1-tahiti.jpg" class="img-fluid" alt="Tahiti">
+                </div>
+                <div class=col-9>
+                    <h5>Bora Bora</h5>
+                    <p>Um verdadeiro paraíso tropical, com praias cristalinas, recifes de corais, areia
+                        branca e românticos bangalôs sobre a água.</p>
+                    <p>
+                        Quantidade de dias: 1.
+                    </p>
+                    <p>
+                        Alimentação: tudo incluso.
+                    </p>
+                    <p>
+                        Quartos Sinta-se em casa em um de nossos 394 quartos com ar-condicionado e TVs LCD. Sua
+                        cama Tempur-Pedic apresenta roupas de cama premium. O Wi-Fi de cortesia mantém você
+                        conectado e há programas a cabo para sua diversão. Banheiro privativo possui produtos de
+                        toalete de grife e secadores de cabelo.Comodidades Aproveite as instalações recreativas,
+                        que incluem quadras de tênis descobertas, uma piscina externa e uma academia. Este hotel
+                        oferece comodidades como Wi-Fi de cortesia, serviços de concierge e sala de jogos. É
+                        fácil passar um dia de muita diversão com o traslado de cortesia para o parque
+                        temático.Alimentação Saboreie pratos da culinária americana no American Kitchen Grill,
+                        um restaurante familiar que oferece um bar. Você também pode se hospedar no local e
+                        aproveitar o serviço de quarto 24 horas. Relaxe com uma bebida refrescante em um bar ao
+                        lado da piscina ou em um dos 2 bares/lounges. Há café da manhã (buffet) disponível
+                        diariamente, entre 7h00 e 11h00, mediante uma taxa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     </div>
+
+
+
 
 
 
