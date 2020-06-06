@@ -1,6 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Pacote = sequelize.define(
-        "Pacote", {
+    const Pacote = sequelize.define("Pacote", {
             id: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
@@ -18,22 +17,47 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.DATE,
                 as: 'data-chegada'
             },
-            descricao: DataTypes.STRING,
-            preco: DataTypes.FLOAT,
-            diarias: DataTypes.INTEGER,
             aereo: DataTypes.BOOLEAN,
-            /* incluir campo 1: N
-            fotos: 
-            */
+            diarias: DataTypes.INTEGER,
+            preco: DataTypes.DECIMAL,
+            descricao: DataTypes.STRING,
+            imagem: DataTypes.STRING,
+            fk_destino: DataTypes.INTEGER,
+            fk_origem: DataTypes.INTEGER,
+            fk_ambiente: DataTypes.INTEGER,
+            fk_atracao: DataTypes.INTEGER
+        }, {
+            tableName: "pacote",
+            timestamp: false
+        });
+        
+        Pacote.associate = models => {
+            Pacote.belongsToMany(models.Destino, {
+                foreignKey: 'fk_destino',
+                as: 'destinosDoPacote',
+                through: models.DestinoPacote
+            })
 
-            /* incluir campos N:N
-            origens: {pais, estado, cidade},
-            atracoes: {id, nome},
-            ambientes: {id, nome},
-            hospedagens: {id, nome-hotel, data-entrada, data-saida, numero-pessoas, estrelas, refeicoes, descricao, cep, complemento, pais, estado, cidade, bairro, rua}
-            localizacoes: {pais, cidade}
-            */
+            Pacote.belongsToMany(models.Origem, {
+                foreignKey: 'fk_origem',
+                as: 'origensDoPacote',
+                through: models.OrigemPacote
+            })
 
+            Pacote.belongsToMany(models.Ambiente, {
+                foreignKey: 'fk_ambiente',
+                as: 'ambientesDoPacote',
+                through: models.AmbientePacote
+            })
+
+            Pacote.belongsToMany(models.Atracao, {
+                foreignKey: 'fk_atracao',
+                as: 'atracaoDoPacote',
+                through: models.AtracaoPacote
+            })
         }
-    )
+
+
+
+        return Pacote;
 }

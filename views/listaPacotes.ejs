@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<%- include('partials/head', {title:"Cadastre seu pacote"}) %>
+
+<body>
+  <div class="nav cover-container d-flex w-100 h-100 p-3 mx-auto flex-column nav-rosa">
+    <%- include('partials/header') %>
+  </div>
+
+    <main class="container mt-5">
+        <div class="row">
+            <!--Pizza 1-->
+            <%  pacotes.forEach((pacote, index)=>{ %>
+                <div class="col-md-4 p-2">
+                    <div class="card">
+                        <img src="/img/<%= pizza.img%>" alt="Foto da pizza" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= pizza.nome %></h5>
+                            <p>Preço da pizza: <%= pizza.preco %></p>
+                            <button class="btn btn-success">Comprar</button>
+                        </div>
+                        <div class="card-footer d-flex">
+                            <form action="/cardapio/deletar/<%= index %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-warning">Excluir</button>
+                            </form>
+                            <a href="/cardapio/alterar/<%= index %>" class="btn btn-primary ml-1">Alterar</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+        <a href="/cardapio/cadastro" class="btn btn-primary">Cadastrar Pizza</a>
+    </main>
+</body>
+</html>

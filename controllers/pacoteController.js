@@ -1,5 +1,11 @@
-let PacoteController = {
-    viewForm: (_req, res) => {
+const Pacote = require("../models/Pacote");
+
+let pacoteController = {
+    index: async (_req, res) => {
+            const pacotes = await Pacote.findAll();
+        return res.render('pacotes', { pacotes });
+    },
+    visualizarCadastro: (_req, res) => {
         return res.render('cadastroPacote');
     },
     cadastrarPacote: (req, res) => {
@@ -10,4 +16,4 @@ let PacoteController = {
 
 }
 
-module.exports = PacoteController;
+module.exports = pacoteController;
