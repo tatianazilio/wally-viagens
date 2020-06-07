@@ -25,6 +25,8 @@ module.exports = {
       preco: Sequelize.DECIMAL,
       descricao: Sequelize.STRING,
       imagem: Sequelize.STRING,
+      createdAt: Sequelize.DATE,
+      updatedAt: Sequelize.DATE,
     });
   },
 

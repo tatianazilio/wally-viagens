@@ -10,7 +10,6 @@ module.exports = {
       },
       nome: {
         type: Sequelize.STRING,
-        allowNull: false
       },
       fk_pacote: {
         type: Sequelize.INTEGER,
@@ -21,6 +20,8 @@ module.exports = {
           key: 'id'
         }
       },
+      createdAt: Sequelize.DATE,
+      updatedAt: Sequelize.DATE,
     });
   },
 

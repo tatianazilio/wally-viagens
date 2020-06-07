@@ -1,4 +1,19 @@
-const fs = require('fs');
+module.exports = (sequelize, DataTypes) => {
+    const Usuario = sequelize.define("Usuario", {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        }
+    }, {
+        tableName: 'usuario',
+        timestamps: false
+    })
+
+    return Usuario;
+}
+
+/*const fs = require('fs');
 const path = require('path');
 
 const arquivo = path.join('usuarios.json')
@@ -19,4 +34,4 @@ const Usuario = {
     }
 }
 
-module.exports = Usuario;
+module.exports = Usuario;*/
