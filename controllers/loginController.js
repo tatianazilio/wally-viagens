@@ -1,9 +1,32 @@
-const Usuario = require('../models/Usuario');
+const Usuario = require('../controllers/usuarioController');
 const bcrypt = require('bcrypt');
 const loginController = {
 
+    verLogin: (req, res) => {
+        return res.render("")
+    },
+
     logar: (req, res) => {
-        res.send(req.body);
+
+        const {email, senha} = req.body;
+
+        const usuarioSalvo = Usuario.buscarUsuario(email)
+        
+        if(!usuarioSalvo) {
+            return res.render("", {mensagem:"Email ou senha inválidos!"})
+
+        }
+
+        if(!bcrypt.compareSync(senha, usuarioSalvo.senha)) {
+            return res.render("", {mensagem:"Email ou senha inválidos!"})
+        }
+
+        res.send("Usuario logado")
+
+    },
+
+    verCadastro: (req, res) => {
+        return res.render("")
     },
 
     cadastrar: (req, res) => {
@@ -14,7 +37,7 @@ const loginController = {
 
         Usuario.cadastrarUsuario(email, senha);
 
-        res.send('Cadastro com sucesso!')
+        return res.redirect('/')
     },
 }
 

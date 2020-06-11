@@ -80,9 +80,14 @@
                                                 placeholder="Senha" />
                                         </div>
                                         <button type="submit" class="btn btn-primary">Login</button>
+                                        
+                                        <% if(typeof(mensagem) != "undefined"){ %>
+                                            <div class="alert alert-danger"><%= mensagem %></div>
+                                            <% } %>
+
                                     </form>
                                 </div>
-                                <div id="login" class="modal-footer"></div>
+                                <div id="login" class="modal-footer"></div>  
                             </div>
                         </div>
                     </div>
