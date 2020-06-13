@@ -8,15 +8,14 @@ module.exports = (sequelize, DataTypes) => {
         pais: DataTypes.STRING,
         cidade: DataTypes.STRING
     },{
-        tableName:'destino',
-        timestamps:false
+        tableName:'destino'
     })
 
     Destino.associate = models => {
         Destino.belongsToMany(models.Pacote, {
-            foreignKey: 'fk_pacote',
-            as: 'pacotesPorDestino',
-            through: models.DestinoPacote
+            through: models.DestinoPacote,
+            as: 'pacotes',
+            foreignKey: 'destinoId',
         })
     }
 

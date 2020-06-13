@@ -22,38 +22,33 @@ module.exports = (sequelize, DataTypes) => {
             preco: DataTypes.DECIMAL,
             descricao: DataTypes.STRING,
             imagem: DataTypes.STRING,
-            fk_destino: DataTypes.INTEGER,
-            fk_origem: DataTypes.INTEGER,
-            fk_ambiente: DataTypes.INTEGER,
-            fk_atracao: DataTypes.INTEGER
         }, {
-            tableName: "pacote",
-            timestamp: false
+            tableName: "pacote"
         });
         
         Pacote.associate = models => {
             Pacote.belongsToMany(models.Destino, {
-                foreignKey: 'fk_destino',
-                as: 'destinosDoPacote',
-                through: models.DestinoPacote
+                through: models.DestinoPacote,
+                as: 'destinos',
+                foreignKey: 'pacoteId',
             })
 
             Pacote.belongsToMany(models.Origem, {
-                foreignKey: 'fk_origem',
-                as: 'origensDoPacote',
-                through: models.OrigemPacote
+                through: models.OrigemPacote,
+                as: 'origens',
+                foreignKey: 'pacoteId',
             })
 
             Pacote.belongsToMany(models.Ambiente, {
-                foreignKey: 'fk_ambiente',
-                as: 'ambientesDoPacote',
-                through: models.AmbientePacote
+                through: models.AmbientePacote,
+                as: 'ambientes',
+                foreignKey: 'pacoteId',
             })
 
             Pacote.belongsToMany(models.Atracao, {
-                foreignKey: 'fk_atracao',
-                as: 'atracaoDoPacote',
-                through: models.AtracaoPacote
+                through: models.AtracaoPacote,
+                as: 'atracoes',
+                foreignKey: 'atracaoId',
             })
         }
 

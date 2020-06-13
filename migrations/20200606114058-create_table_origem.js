@@ -10,15 +10,6 @@ module.exports = {
       },
       pais: Sequelize.STRING,
       cidade: Sequelize.STRING,
-      fk_pacote: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: {
-            tableName: 'pacote'
-          },
-          key: 'id'
-        }
-      },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
     });

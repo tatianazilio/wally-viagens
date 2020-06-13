@@ -8,23 +8,21 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
-      fk_pacote: {
+      pacoteId: {
         type: Sequelize.INTEGER,
         references: {
-          model: {
-            tableName: 'pacote'
-          },
+          model: { tableName: 'pacote' },
           key: 'id'
-        }
+        },
+        onDelete: 'CASCADE'
       },
-      fk_ambiente: {
+      ambienteId: {
         type: Sequelize.INTEGER,
         references: {
-          model: {
-            tableName: 'ambiente'
-          },
+          model: { tableName: 'ambiente' },
           key: 'id'
-        }
+        },
+        onDelete: 'CASCADE'
       },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,

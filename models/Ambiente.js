@@ -8,14 +8,13 @@ module.exports = (sequelize, DataTypes) => {
         nome: DataTypes.STRING,
     },{
         tableName:'ambiente',
-        timestamps:false
     })
 
     Ambiente.associate = models => {
         Ambiente.belongsToMany(models.Pacote, {
-            foreignKey: 'fk_pacote',
-            as: 'pacotesPorAmbiente',
-            through: models.AmbientePacote
+            through: models.AmbientePacote,
+            as: 'pacotes',
+            foreignKey: 'ambienteId',
         })
     }
 

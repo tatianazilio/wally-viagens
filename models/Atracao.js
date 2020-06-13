@@ -7,15 +7,14 @@ module.exports = (sequelize, DataTypes) => {
         },
         nome: DataTypes.STRING,
     },{
-        tableName:'atracao',
-        timestamps:false
+        tableName:'atracao'
     })
 
     Atracao.associate = models => {
         Atracao.belongsToMany(models.Pacote, {
-            foreignKey: 'fk_pacote',
-            as: 'pacotesPorAtracao',
-            through: models.AtracaoPacote
+            through: models.AtracaoPacote,
+            as: 'pacotes',
+            foreignKey: 'atracaoId',
         })
     }
 
