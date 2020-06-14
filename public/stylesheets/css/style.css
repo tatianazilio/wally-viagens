@@ -261,9 +261,8 @@ h6 {
   color: #f95f62ff;
 }
 
-.card-deck {
-  margin-left: 7%;
-  margin-right: 7%;
+.rating {
+  width: 25px;
 }
 
 /* CADASTRO PACOTE */

@@ -30,19 +30,19 @@ module.exports = (sequelize, DataTypes) => {
             Pacote.belongsToMany(models.Destino, {
                 through: models.DestinoPacote,
                 as: 'destinos',
-                foreignKey: 'pacoteId',
+                foreignKey: 'destinoId',
             })
 
             Pacote.belongsToMany(models.Origem, {
                 through: models.OrigemPacote,
                 as: 'origens',
-                foreignKey: 'pacoteId',
+                foreignKey: 'origemId',
             })
 
             Pacote.belongsToMany(models.Ambiente, {
                 through: models.AmbientePacote,
                 as: 'ambientes',
-                foreignKey: 'pacoteId',
+                foreignKey: 'ambienteId',
             })
 
             Pacote.belongsToMany(models.Atracao, {

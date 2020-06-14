@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         nome: DataTypes.STRING,
     },{
-        tableName:'ambiente',
+        tableName:'ambiente'
     })
 
     Ambiente.associate = models => {

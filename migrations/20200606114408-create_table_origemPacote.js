@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('destino_has_pacote', {
+    return queryInterface.createTable('origemPacote', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -16,10 +16,10 @@ module.exports = {
         },
         onDelete: 'CASCADE'
       },
-      destinoId: {
+      origemId: {
         type: Sequelize.INTEGER,
         references: {
-          model: { tableName: 'destino' },
+          model: { tableName: 'origem' },
           key: 'id'
         },
         onDelete: 'CASCADE'
@@ -30,6 +30,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('destino_has_pacote');
+    return queryInterface.dropTable('origemPacote');
   }
 };

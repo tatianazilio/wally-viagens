@@ -1,10 +1,17 @@
 const { Pacote, Ambiente, Atracao, Destino, Origem } = require("../models");
+const moment = require('moment');
 
 let pacoteController = {
     index: async (_req, res) => {
         try {
-            const pacotes = await Pacote.findAll({
-            attributes: ['id', 'nome']
+            let pacotes = await Pacote.findAll({
+            attributes: ['id', 'nome', 'dataDePartida', 'dataDeChegada']
+            });
+
+            pacotes.forEach(pacote => {
+                pacote.ida = moment(pacote.dataDePartida).locale('pt-br').format('L');
+                pacote.volta = moment(pacote.dataDeChegada).locale('pt-br').format('L');
+
             });
         return res.render('listaPacotes', { pacotes });
         } catch (error) {
@@ -37,7 +44,7 @@ let pacoteController = {
             descricao,
             imagem: imagem.filename
         });
-
+        
         return res.redirect("/");
 
         } catch (error) {

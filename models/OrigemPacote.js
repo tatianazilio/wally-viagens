@@ -5,11 +5,10 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        fk_pacote: DataTypes.INTEGER,
-        fk_origem: DataTypes.INTEGER
+        pacoteId: DataTypes.INTEGER,
+        origemId: DataTypes.INTEGER
     },{
         tableName:'origemPacote',
-        timestamps:false
     })
 
     return OrigemPacote;

@@ -16,7 +16,8 @@
                 <tr>
                     <th scope="col">ID Pacote</th>
                     <th scope="col">Nome</th>
-
+                    <th scope="col">Ida</th>
+                    <th scope="col">Volta</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -25,6 +26,8 @@
                 <tr>
                     <th scope="row"><%= pacote.id %></th>
                     <th> <%= pacote.nome %></th>
+                    <th> <%= pacote.ida %></th>
+                    <th> <%= pacote.volta %></th>
                     <th>
                         <div class="d-inline-flex">
                         <a href="/pacote/<%= pacote.id %>" class="btn btn-secondary mr-2">Ver pacote</a>

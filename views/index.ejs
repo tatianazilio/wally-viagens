@@ -86,12 +86,16 @@
           <p class="card-text">
             <%= pacote.descricao %>
           </p>
-          <img src="../../images/rating.png" class="img-fluid" alt="rating" />
-          <a href="#" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
+          <% if (pacote.aereo) { %>
+            <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" />
+          <% } %>
         </div>
+            <div class="card-footer text-center">
+              <a href="#" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
+            </div>
       </div>
     <% }) %>
-</div>
+  </div>
 </section>
 
 <!--SEÇÃO BRASIL-->
@@ -107,12 +111,16 @@
           <p class="card-text">
             <%= pacote.descricao %>
           </p>
-          <img src="../../images/rating.png" class="img-fluid" alt="rating" />
-          <a href="#" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
+          <% if (pacote.aereo) { %>
+            <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" />
+          <% } %>
         </div>
+            <div class="card-footer text-center">
+              <a href="#" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
+            </div>
       </div>
     <% }) %>
-</div>
+  </div>
 </section>
 
 
@@ -122,19 +130,23 @@
   <h3>Viaje pelo mundo</h3>
   <h5>Escolha algum destes pacotes para conhecer outros países</h5>
   <div class="row justify-content-around">
-          <% pacotes.forEach((pacote) => { %>
-            <div class="card" style="width: 15rem;">
-              <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top" alt="Tahiti" />
-              <div class="card-body">
-                <h5 class="card-title"><%= pacote.nome %></h5>
-                <p class="card-text">
-                  <%= pacote.descricao %>
-                </p>
-                <img src="../../images/rating.png" class="img-fluid" alt="rating" />
-                <a href="#" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
-              </div>
+    <% pacotes.forEach((pacote) => { %>
+      <div class="card" style="width: 15rem;">
+        <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top" alt="Tahiti" />
+        <div class="card-body">
+          <h5 class="card-title"><%= pacote.nome %></h5>
+          <p class="card-text">
+            <%= pacote.descricao %>
+          </p>
+          <% if (pacote.aereo) { %>
+            <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" />
+          <% } %>
+        </div>
+            <div class="card-footer text-center">
+              <a href="#" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
             </div>
-          <% }) %>
+      </div>
+    <% }) %>
   </div>
 </section>
 

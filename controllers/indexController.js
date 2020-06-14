@@ -5,7 +5,12 @@ let indexController = {
         try {
             const pacotes = await Pacote.findAll({ limit: 4 });
              /*const pacotesNacionais = await Pacote.findAll({
-                where:
+                 include: [{
+                     model: Destino,
+                     through: {
+                        where: {pais: 'Brasil'},
+                     }
+                 }]
              }); */
              /*const pacotesInternacionais = await Pacote.findAll({
                 where:
