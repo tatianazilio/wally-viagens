@@ -1,4 +1,4 @@
-const { Pacote, Ambiente, Atracao, Destino, Origem } = require("../models");
+const { Pacote, Ambiente, AmbientePacote, Atracao, AtracaoPacote, Destino, DestinoPacote, Origem, OrigemPacote } = require("../models");
 const moment = require('moment');
 
 let pacoteController = {
@@ -13,7 +13,7 @@ let pacoteController = {
                 pacote.volta = moment(pacote.dataDeChegada).locale('pt-br').format('L');
 
             });
-        return res.render('listaPacotes', { pacotes });
+            return res.render('listaPacotes', { pacotes });
         } catch (error) {
             console.log(error);
             return res.render('error', {error});
@@ -42,10 +42,21 @@ let pacoteController = {
             diarias,
             preco,
             descricao,
-            imagem: imagem.filename
-        });
+            imagem: imagem.filename,
+            destinos: [{pais: destinoPais, cidade: destinoCidade}],
+            origens: [{pais: origemPais, cidade: origemCidade}],
+            ambientes: [{nome: ambiente}],
+            atracoes: [{nome: atracao}]
+            }, {
+                include: [
+                    { model: Origem, through: OrigemPacote, as: 'origens' }, 
+                    { model: Destino, through: DestinoPacote, as: 'destinos' }, 
+                    { model: Ambiente, through: AmbientePacote, as: 'ambientes' }, 
+                    { model: Atracao, through: AtracaoPacote, as: 'atracoes'}
+                ]
+            });
         
-        return res.redirect("/");
+            return res.redirect("/pacote/ver");
 
         } catch (error) {
             console.log(error);

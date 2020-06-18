@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         Atracao.belongsToMany(models.Pacote, {
             through: models.AtracaoPacote,
             as: 'pacotes',
-            foreignKey: 'pacoteId',
+            foreignKey: 'atracaoId',
         })
     }
 

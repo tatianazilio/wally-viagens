@@ -261,6 +261,11 @@ h6 {
   color: #f95f62ff;
 }
 
+.card-img-top {
+  max-height: 150px;
+  object-fit: cover;
+}
+
 .rating {
   width: 25px;
 }
