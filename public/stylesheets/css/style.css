@@ -285,19 +285,45 @@ h6 {
 /* PAGAMENTO */
 
 #pagamento {
-  background-color: rgb(177, 177, 177);
+  /* background-color: rgb(177, 177, 177);
   border-radius: 12px;
   padding: 2%;
-  margin: 2%;
+  margin: 2%;*/
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
+  font-family: "Lucida Grande";
 
 }
-#pagamento .btn-success{
-  background-color: grey;
-  border-color: rgb(138, 138, 138);
+#pagamento .btn-secondary{
+  display: flex;
+  align-self: center;
 }
 
+#pagamento .btn-danger {
+  background-color: #f95f62ff;
+  border-color: #f95f62ff;
+}
+
+#pagamento .btn-block{
+  background-color: rgb(219, 219, 219);
+  display: flex;
+  
+}
+
+#pagamento h5 {
+  margin: 2px 0 0 10px;
+ 
+}
+#pagamento #foto-pedido{
+  background-size:cover ;
+  background-position: center;
+
+}
+#pagamento .accordion .card{
+  background-color: rgb(220, 220, 220);
+}
 
 .imagem-resumo {
   display: -webkit-flex;
@@ -311,12 +337,11 @@ display: flexbox;
 justify-content: none;
 }
 
-#pgto1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-wrap: wrap;
+.quadro-externo {
+  width: 95%;
+  background-color: rgb(199, 199, 199);
+  margin: 32px;
+  color:blue;
 }
 
 #pgto2 {
@@ -338,4 +363,3 @@ justify-content: none;
 #pagamento h3 {
   color: #000000
 }
-
