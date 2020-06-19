@@ -1,7 +1,7 @@
 /* ESTRUTURAS GERAIS */
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial; 
 }
 
 a {
@@ -9,14 +9,14 @@ a {
 }
 
 h6 {
-  font-family: "Lucida Grande";
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
   color: rgb(82, 82, 82);
 }
 
 /* BOOTSTRAP */
 
 .btn-link {
-  font-family: "Lucida Grande";
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
   font-size: 14px;
   padding-left: 30px;
   color: white;
@@ -40,7 +40,7 @@ h6 {
 }
 
 .navbar-nav .nav-item .nav-link {
-  font-family: "Lucida Grande";
+  font-family: "Lucida Grande","Open Sans", Helvetica, sans-serif, Arial;
   padding-left: 30px;
   color: white;
 }
@@ -75,7 +75,7 @@ h6 {
 
 .footer-copyright {
   text-align: center;
-  font-family: "Lucida Grande";
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
   color: white;
   background-color: rgb(44, 44, 44);
   padding-top: 15px;
@@ -172,7 +172,7 @@ h6 {
 }
 
 .texto-login {
-  font-family: "Lucida Grande";
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
   padding-bottom: 15px;
   padding-top: 40px;
   margin: 0 auto;
@@ -192,7 +192,7 @@ h6 {
 }
 
 ::-webkit-input-placeholder {
-  font-family: "Lucida Grande";
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
   font-size: 14px;
   font-weight: lighter;
 }
@@ -251,6 +251,7 @@ h6 {
   margin-top: 5%;
   margin-bottom: 5%;
   padding: 2%;
+  background-color: rgba(219, 219, 219, 0.753);
 }
 
 .destaques {
@@ -285,7 +286,7 @@ h6 {
 /* PAGAMENTO */
 
 #pagamento {
-  /* background-color: rgb(177, 177, 177);
+    /* background-color: rgb(177, 177, 177);
   border-radius: 12px;
   padding: 2%;
   margin: 2%;*/
@@ -293,7 +294,7 @@ h6 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center; 
-  font-family: "Lucida Grande";
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
 
 }
 #pagamento .btn-secondary{
@@ -362,4 +363,9 @@ justify-content: none;
 
 #pagamento h3 {
   color: #000000
+}
+
+#pagamento form{
+  border-color: grey;
+  
 }
