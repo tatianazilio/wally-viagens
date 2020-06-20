@@ -300,11 +300,13 @@ h6 {
 #pagamento .btn-secondary{
   display: flex;
   align-self: center;
+  text-decoration: none;
 }
 
 #pagamento .btn-danger {
   background-color: #f95f62ff;
   border-color: #f95f62ff;
+
 }
 
 #pagamento .btn-block{
@@ -368,4 +370,21 @@ justify-content: none;
 #pagamento form{
   border-color: grey;
   
+}
+
+#pagamento a {
+  text-decoration: none;
+}
+
+#pag-concluido {
+  background: lightgrey;
+  border-radius: 50%;
+  height: 50vh;
+  width: 50vh;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
