@@ -1,44 +1,41 @@
-const Usuario = require('../controllers/usuarioController');
-const bcrypt = require('bcrypt');
+const Sequelize = require("sequelize");
+const config = require("../config/database");
+const bcrypt = require("bcrypt");
+
 const loginController = {
 
-    verLogin: (req, res) => {
-        return res.render("")
-    },
+  logar: async (req, res) => {
+    const {email, password} = req.body;
+    const con = new Sequelize(config);
 
-    logar: (req, res) => {
+    const [user] = await con.query(
+      "SELECT * FROM usuario WHERE email=:email limit 1",
+      {
+        replacements: {
+          email,
+        },
+        type: Sequelize.QueryTypes.SELECT,
+      }
+    );
 
-        const {email, senha} = req.body;
+    if (!user || !bcrypt.compareSync(password, user.password)) {
+        return res.render("index", {
+        msg: "Email ou senha errados!",
+      });
+    }
 
-        const usuarioSalvo = Usuario.buscarUsuario(email)
-        
-        if(!usuarioSalvo) {
-            return res.render("", {mensagem:"Email ou senha inválidos!"})
+    req.session.user = {
+      id: user.id,
+      email: user.email,
+    };
 
-        }
+    return res.redirect("/");
+  },
 
-        if(!bcrypt.compareSync(senha, usuarioSalvo.senha)) {
-            return res.render("", {mensagem:"Email ou senha inválidos!"})
-        }
-
-        res.send("Usuario logado")
-
-    },
-
-    verCadastro: (req, res) => {
-        return res.render("")
-    },
-
-    cadastrar: (req, res) => {
-
-        let {email,senha} = req.body;
-
-        senha = bcrypt.hashSync(senha, 10);
-
-        Usuario.cadastrarUsuario(email, senha);
-
-        return res.redirect('/')
-    },
-}
+  destroy: (req, res) => {
+    req.session = undefined;
+    return res.redirect("/");
+  },
+};
 
 module.exports = loginController;
