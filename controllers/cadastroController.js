@@ -1,5 +1,6 @@
 const { Pacote, Ambiente, AmbientePacote, Atracao, AtracaoPacote, Destino, DestinoPacote, Origem, OrigemPacote } = require("../models");
 const moment = require('moment');
+require('dotenv').config();
 
 let cadastroController = {
     index: async (_req, res) => {
@@ -21,8 +22,9 @@ let cadastroController = {
     },
 
     create: (_req, res) => {
+        const API_KEY = process.env.API_KEY;
         try {
-            return res.render('cadastroPacote');
+            return res.render('cadastroPacote', {API_KEY});
         } catch (error) {
             console.log(error);
             return res.render('error', {error});
