@@ -37,10 +37,10 @@
 
                     <!-- resumo do pedido -->
                     <div class="col-md-6">
-                        <div style="height: 30px;">
+                        <div style="height: 10%;">
                             <h5>Pacote</h5>
                         </div>
-                        <div>
+                        <div style="height: fit-content;">
                             <h5>Bora Bora</h5>
                             <p>Um verdadeiro paraíso tropical, com praias cristalinas, recifes de corais, areia
                                 branca e românticos bangalôs sobre a água.</p>
@@ -64,10 +64,10 @@
 
                     <!-- valor -->
                     <div class="col-md-2">
-                        <div style="height: 30px;">
+                        <div style="height: 10%;">
                             <h5>Valor</h5>
                         </div>
-                        <div>
+                        <div style="height: 90%; display: flex;align-items: center; justify-content: center;">
                             <p>R$500,00</p>
                         </div>
 
@@ -77,7 +77,7 @@
 
                     <div class="col-md-1">
                         
-                        <button class="btn btn-danger" style="width: 100%; height: 100%;border-radius: 0 4px 4px 0 ;">
+                        <button class="btn btn-danger cancel" style="width: 100%; height: 100%;">
 
                             <svg class="bi bi-x" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +97,7 @@
 
             <div style="margin: 20px;">
                 <h3>
-                    Total
+                    Total: R$500,00
                 </h3>
             </div>
             <!-- fim do quadro de pedido -->
@@ -120,18 +120,18 @@
 
                         <div class="form-group col-sm-9">
                             <label for="nomeCompleto">Nome Completo</label>
-                            <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto"
+                            <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" required="required"
                                 placeholder="Nome Completo">
                         </div>
 
                         <div class="form-group col-sm-3">
                             <label for="dataDeNascimento">Data de nascimento</label>
-                            <input type="date" class="form-control" id="dataDeNascimento" name="dataDeNascimento">
+                            <input type="date" class="form-control" id="dataDeNascimento" name="dataDeNascimento" required="required">
                         </div>
 
                         <div class="form-group col-sm-4">
                             <label for="CPF">CPF</label>
-                            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF">
+                            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" required="required">
                         </div>
 
                         <div class="form-group col-sm-4">
@@ -146,39 +146,39 @@
                         <div class="form-group col-sm-4">
                             <label for="telefone">Telefone</label>
                             <input type="text" class="form-control" id="telefone" name="telefone"
-                                placeholder="Telefone">
+                                placeholder="Telefone" required="required">
                         </div>
                         <div class="form-group col-sm-6">
                             <label for="endereco">Endereço</label>
                             <input type="text" class="form-control" id="endereco" name="endereco"
-                                placeholder="Endereço" size="50">
+                                placeholder="Endereço" size="50"  required="required">
                         </div>
                         <div class="form-group col-sm-3">
                             <label for="numero">Número</label>
                             <input type="text" class="form-control" id="numero" name="numero" placeholder="Número"
-                                size="10">
+                                size="10"  required="required">
                         </div>
                         <div class="form-group col-sm-3">
                             <label for="complemento">Complemento</label>
                             <input type="text" class="form-control" id="complemento" name="complemento"
-                                placeholder="Complemento" size="10">
+                                placeholder="Complemento" size="10" required="required">
                         </div>
 
                         <div class="form-group col-sm-4">
                             <label for="estado">Estado</label>
                             <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado"
-                                size="20">
+                                size="20" required="required">
                         </div>
                         <div class="form-group col-sm-4">
                             <label for="cidade">Cidade</label>
                             <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade"
-                                size="20">
+                                size="20" required="required">
                         </div>
 
                         <div class="form-group col-sm-4">
                             <label for="bairro">Bairro</label>
                             <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro"
-                                size="20">
+                                size="20" required="required">
                         </div>
                        
                 </form>
@@ -204,7 +204,7 @@
 
 
 
-        <!-- Forma de Pagamento novo -->
+        <!-- Formas de Pagamento -->
 
 
 
@@ -216,7 +216,7 @@
 
             <div class="accordion" id="accordionExample">
                 <div class="card">
-                    <div class="card-header" id="headingOne">
+                    <div class="card-header" id="headingOne" style="background-color: rgb(219,219,219);">
                         <h2 class="mb-0">
                             <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                                 data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
@@ -252,7 +252,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header" id="headingTwo">
+                    <div class="card-header" id="headingTwo" style="background-color: rgb(219,219,219)">
                         <h2 class="mb-0">
                             <button class="btn btn-link btn-block text-left collapsed" type="button"
                                 data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
@@ -287,7 +287,7 @@
                                     <div class="form-group col-12">
                                         <label for="numeroDoCartao">Número do Cartão</label>
                                         <input type="number" class="form-control" id=numeroDoCartao
-                                            name="numeroDoCartao" placeholder="Número do cartão">
+                                            name="numeroDoCartao" placeholder="Número do cartão" required="required">
                                     </div>
 
                                     <div class="form-group col-6">
@@ -299,32 +299,35 @@
                                     <div class="form-group col-6">
                                         <label for="numeroDeVerificacao">Dígito verificador</label>
                                         <input type="number" class="form-control" id="numeroDeVerificacao"
-                                            name="numeroDeVerificacao" placeholder="Dígito de verificação">
+                                            name="numeroDeVerificacao" placeholder="Dígito de verificação" required="required">
 
                                     </div>
 
                                     <div class="form-group col-12">
                                         <label for="nomeNoCartao">Nome no Cartão</label>
                                         <input type="text" class="form-control" id="nomeNoCartao" name="nomeNoCartao"
-                                            placeholder="Nome no cartão">
+                                            placeholder="Nome no cartão" required="required">
                                     </div>
 
                                     <br>
 
 
                                 </div>
-                            </form>
+                            
 
 
 
                             <a href="/pagamento/concluido">
                                 <div style="width: 100%; display: flex; justify-content: center;">
-                                    <button type="button" class="btn btn-secondary">
+                                    <button type="submit" class="btn btn-secondary">
                                     Confirmar Pagamento
                                     </button>
+
+                                
+
                                 </div>
                             </a>
-
+                        </form>
                         </div>
                     </div>
                 </div>
