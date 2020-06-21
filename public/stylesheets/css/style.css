@@ -283,6 +283,10 @@ h6 {
   background-size: cover;
 }
 
+.custom-select {
+  height: 45px;
+}
+
 /* PAGAMENTO */
 
 #pagamento {
@@ -306,6 +310,8 @@ h6 {
 #pagamento .btn-danger {
   background-color: #f95f62ff;
   border-color: #f95f62ff;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 
 }
 
@@ -326,6 +332,7 @@ h6 {
 }
 #pagamento .accordion .card{
   background-color: rgb(220, 220, 220);
+  width: 100%;
 }
 
 .imagem-resumo {
@@ -387,4 +394,26 @@ justify-content: none;
   flex-direction: column;
   align-items: center;
   position: relative;
+}
+
+#pagamento .card-header{
+  background-color:"blue"
+
+}
+
+
+@media screen and (max-width: 800px) {
+  #pagamento .mb-3{
+    flex-direction: column;
+  }
+  #foto-pedido{
+    width: 100vw;
+    height: 50vw;
+  }
+  #pagamento .btn-danger{
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 4px;
+
+  }
 }
