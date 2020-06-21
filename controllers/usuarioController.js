@@ -1,35 +1,29 @@
-const fs = require('fs');
-const path = require('path');
+const Sequelize = require("sequelize");
+const config = require("../config/database");
+const bcrypt = require("bcrypt");
 
-const arquivo = path.join('usuarios.json')
+const usuarioController = {
+    
+    store: async (req, res) => {
+        const {email, password} = req.body;
+        const con = new Sequelize(config);
+        const hashPassword = bcrypt.hashSync(password, 10);
 
-const Usuario = {
-
-    cadastrarUsuario: (email, senha) => {
-        const usuariosJson = JSON.parse(fs.readFileSync(arquivo, {
-            encoding: 'utf-8'
-        }));
-
-        usuariosJson.push({
-            email,
-            senha,
-        });
-
-        fs.writeFileSync(arquivo, JSON.stringify(usuariosJson))
-    },
-
-    buscarUsuario: email => {
-        const usuariosJson = JSON.parse(fs.readFileSync(arquivo, {
-            encoding: 'utf-8'
-        }));
-        
-        usuariosJson.forEach(usuario => {
-            if (usuario.email == email) {
-                return usuario
+        const user = await con.query(
+            "INSERT INTO usuario (email, password) values (:email, :password)", 
+            {
+                replacements: {
+                    email,
+                    password: hashPassword,
+                }, 
+                type: Sequelize.QueryTypes.INSERT,
             }
-        })
-        return false
-    }
-} 
+        )
+        if(!user) {
+            return res.render("/", {msg: "Erro ao cadastrar um usuário",})
+        }
+        return res.redirect("/")
+    },
+};
 
-module.exports = Usuario;
+module.exports = usuarioController;

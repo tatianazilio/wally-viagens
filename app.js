@@ -3,13 +3,15 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const session = require("express-session");
 
 const indexRouter = require("./routes/indexRoute");
 const usersRouter = require("./routes/usuarioRoute");
 const pagamentoRouter = require("./routes/pagamentoRoute");
 const destinoRouter = require("./routes/destinoRoute");
 const pacoteRouter = require("./routes/pacoteRoute");
-const loginRouter = require("./routes/loginRoute");
+const usuarioRoute = require("./routes/usuarioRoute");
+const loginRoute = require("./routes/loginRoute")
 
 const app = express();
 
@@ -22,6 +24,12 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: false
 }));
+app.use(session({
+    secret: "343ji43j4n3jn4jk3n",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -30,7 +38,8 @@ app.use("/usuarios", usersRouter);
 app.use("/pagamento", pagamentoRouter);
 app.use("/destino", destinoRouter);
 app.use("/pacote", pacoteRouter);
-app.use(loginRouter);
+app.use(usuarioRoute);
+app.use(loginRoute);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
