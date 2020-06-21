@@ -8,7 +8,7 @@ const indexRouter = require("./routes/indexRoute");
 const usersRouter = require("./routes/usuarioRoute");
 const pagamentoRouter = require("./routes/pagamentoRoute");
 const destinoRouter = require("./routes/destinoRoute");
-const pacoteRouter = require("./routes/pacoteRoute");
+const cadastroRouter = require("./routes/cadastroRouter");
 const usuarioRoute = require("./routes/usuarioRoute");
 
 const app = express();
@@ -24,12 +24,13 @@ app.use(express.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname,"public","js")));
 
 app.use("/", indexRouter);
 app.use("/usuarios", usersRouter);
 app.use("/pagamento", pagamentoRouter);
 app.use("/destino", destinoRouter);
-app.use("/pacote", pacoteRouter);
+app.use("/cadastro", cadastroRouter);
 app.use(usuarioRoute);
 
 // catch 404 and forward to error handler

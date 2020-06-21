@@ -1,7 +1,7 @@
 const { Pacote, Ambiente, AmbientePacote, Atracao, AtracaoPacote, Destino, DestinoPacote, Origem, OrigemPacote } = require("../models");
 const moment = require('moment');
 
-let pacoteController = {
+let cadastroController = {
     index: async (_req, res) => {
         try {
             let pacotes = await Pacote.findAll({
@@ -30,9 +30,12 @@ let pacoteController = {
     },
 
     store: async (req, res) => {
-        const { nome, dataDePartida, dataDeChegada, aereo, diarias, preco, descricao, destinoPais, destinoCidade, origemPais, origemCidade, ambiente, atracao } = req.body;
+        console.log(req.body);
+        
+        const { nome, dataDePartida, dataDeChegada, aereo, diarias, preco, descricao, destinoPais, destinoCidade, origemCidade, origemPais, ambiente, atracao } = req.body;
         const [imagem] = req.files;
-
+        console.log(destinoCidade, destinoPais, origemCidade, origemPais);
+        
         try {
             const pacote = await Pacote.create({
             nome,
@@ -43,20 +46,20 @@ let pacoteController = {
             preco,
             descricao,
             imagem: imagem.filename,
-            destinos: [{pais: destinoPais, cidade: destinoCidade}],
-            origens: [{pais: origemPais, cidade: origemCidade}],
+            //destinos: [{pais: destinoPais, cidade: destinoCidade}],
+            //origens: [{pais: origemPais, cidade: origemCidade}],
             ambientes: [{nome: ambiente}],
             atracoes: [{nome: atracao}]
             }, {
                 include: [
-                    { model: Origem, through: OrigemPacote, as: 'origens' }, 
-                    { model: Destino, through: DestinoPacote, as: 'destinos' }, 
+                    //{ model: Origem, through: OrigemPacote, as: 'origens' }, 
+                    //{ model: Destino, through: DestinoPacote, as: 'destinos' }, 
                     { model: Ambiente, through: AmbientePacote, as: 'ambientes' }, 
                     { model: Atracao, through: AtracaoPacote, as: 'atracoes'}
                 ]
             });
         
-            return res.redirect("/pacote/ver");
+            return res.redirect("/cadastro/lista");
 
         } catch (error) {
             console.log(error);
@@ -68,10 +71,8 @@ let pacoteController = {
         const { id } = req.params;
 
         try {
-            const resultado = await Pacote.destroy({
-                where: { id }
-            });
-            return res.redirect('/pacote/ver');
+            const resultado = await Pacote.destroy({ where: { id } });
+            return res.redirect("/cadastro/lista");
         } catch (error) {
             console.log(error);
             return res.render('error', {error});
@@ -80,4 +81,4 @@ let pacoteController = {
 
 }
 
-module.exports = pacoteController;
+module.exports = cadastroController;

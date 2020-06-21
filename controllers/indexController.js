@@ -11,7 +11,8 @@ let indexController = {
                 },
                 limit: 4,
              });
-             
+            
+             console.log(pacotesNacionais)
             /*const pacotesInternacionais = await Pacote.findAll({
                 include: { 
                     model: Destino, through: DestinoPacote, as: 'destinos', where: {pais: {$notLike: '%Brasil'}},
