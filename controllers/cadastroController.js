@@ -32,12 +32,10 @@ let cadastroController = {
     },
 
     store: async (req, res) => {
-        console.log(req.body);
         
         const { nome, dataDePartida, dataDeChegada, aereo, diarias, preco, descricao, destinoPais, destinoCidade, origemCidade, origemPais, ambiente, atracao } = req.body;
         const [imagem] = req.files;
-        console.log(destinoCidade, destinoPais, origemCidade, origemPais);
-        
+
         try {
             const pacote = await Pacote.create({
             nome,
@@ -48,14 +46,14 @@ let cadastroController = {
             preco,
             descricao,
             imagem: imagem.filename,
-            //destinos: [{pais: destinoPais, cidade: destinoCidade}],
-            //origens: [{pais: origemPais, cidade: origemCidade}],
+            destinos: [{pais: destinoPais, cidade: destinoCidade}],
+            origens: [{pais: origemPais, cidade: origemCidade}],
             ambientes: [{nome: ambiente}],
             atracoes: [{nome: atracao}]
             }, {
                 include: [
-                    //{ model: Origem, through: OrigemPacote, as: 'origens' }, 
-                    //{ model: Destino, through: DestinoPacote, as: 'destinos' }, 
+                    { model: Origem, through: OrigemPacote, as: 'origens' }, 
+                    { model: Destino, through: DestinoPacote, as: 'destinos' }, 
                     { model: Ambiente, through: AmbientePacote, as: 'ambientes' }, 
                     { model: Atracao, through: AtracaoPacote, as: 'atracoes'}
                 ]
