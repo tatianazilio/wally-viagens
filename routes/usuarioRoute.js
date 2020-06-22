@@ -4,6 +4,7 @@ const usuarioController = require("../controllers/usuarioController")
 
 //Cadastro Usuário Get e Post
 
-  router.post("/cadastrousuario", usuarioController.store);
+router.get("/cadastrousuario", usuarioController.create);
+router.post("/cadastrousuario", usuarioController.store);
 
 module.exports = router;

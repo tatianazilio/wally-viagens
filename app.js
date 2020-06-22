@@ -12,6 +12,7 @@ const destinoRouter = require("./routes/destinoRoute");
 const cadastroRouter = require("./routes/cadastroRouter");
 const usuarioRoute = require("./routes/usuarioRoute");
 const loginRoute = require("./routes/loginRoute")
+const sucessoRoute = require("./routes/sucessoRoute")
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.use("/destino", destinoRouter);
 app.use("/cadastro", cadastroRouter);
 app.use(usuarioRoute);
 app.use(loginRoute);
+app.use("/sucesso", sucessoRoute);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

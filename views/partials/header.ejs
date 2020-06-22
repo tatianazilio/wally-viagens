@@ -13,85 +13,8 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="/cadastro">Anuncie sua viagem!</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Ajuda</a></li>
-                <li class="nav-item"><button type="button" class="btn btn-link" data-toggle="modal"
-                        data-target="#cadastro">Cadastrar</button>
-                    <div class="modal fade" id="cadastro" tabindex="-1" role="dialog"
-                        aria-labelledby="cadastroCenterTitle" aria-hidden="true">
-                        <div id="cadastro" class="modal-dialog modal-dialog-centered" role="document">
-                            <div id="cadastro" class="modal-content">
-                                <button id="cadastro" type="button" class="close" data-dismiss="modal"
-                                    aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <div id="cadastro" class="modal-header"><img src="/stylesheets/img/logoWally-Grey.png"
-                                        alt="Wally" /></div>
-
-                                <div class="texto-login">
-                                    <h6>Cadastrar</h6>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="/cadastrousuario" method="POST">
-                                        <div class="form-group">
-                                            <input type="email" name="email" id="email" placeholder="Email"
-                                                class="form-control" />
-                                        </div>
-
-                                        <div class="form-group">
-                                            <input type="password" name="password" id="senha" placeholder="Senha"
-                                                class="form-control" />
-                                        </div>
-
-                                        <button type="submit" class="btn btn-primary">
-                                            Continuar
-                                        </button>
-                                    </form>
-                                </div>
-
-                                <div id="cadastro" class="modal-footer"></div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#login">
-                        Entrar
-                    </button>
-                    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginCenterTitle"
-                        aria-hidden="true">
-                        <div id="login" class="modal-dialog modal-dialog-centered" role="document">
-                            <div id="login" class="modal-content">
-                                <button id="login" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <div id="login" class="modal-header">
-                                    <img src="/stylesheets/img/logoWally-Grey.png" alt="Wally" />
-                                </div>
-                                <div class="texto-login">
-                                    <h6>Entrar</h6>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="/loginusuario" method="POST">
-                                        <div class="form-group form-login">
-                                            <input type="email" name="email" class="form-control" id="exampleInputEmail1"
-                                                aria-describedby="emailHelp" placeholder="Email" />
-                                        </div>
-                                        <div class="form-group form-login">
-                                            <input type="password" name="password" class="form-control" id="exampleInputPassword1"
-                                                placeholder="Senha" />
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Login</button>
-                                        
-                                        <% if(typeof(mensagem) != "undefined"){ %>
-                                            <div class="alert alert-danger"><%= mensagem %></div>
-                                            <% } %>
-
-                                    </form>
-                                </div>
-                                <div id="login" class="modal-footer"></div>  
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="/cadastrousuario">Cadastrar</a></li>
+                <li class="nav-item"><a class="nav-link" href="/loginusuario">Entrar</a></li>
             </ul>
         </div>
     </nav>

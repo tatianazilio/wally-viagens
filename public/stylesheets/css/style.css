@@ -8,6 +8,14 @@ a {
   color: #00b7ff;
 }
 
+h4 {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: rgb(197, 30, 30);
+}
+
 h6 {
   font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
   color: rgb(82, 82, 82);
@@ -173,7 +181,7 @@ h6 {
 
 .texto-login {
   font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
-  padding-bottom: 15px;
+  padding-bottom: 0px;
   padding-top: 40px;
   margin: 0 auto;
   border-bottom-style: solid;
@@ -211,6 +219,12 @@ h6 {
   background-color: rgb(255, 87, 90);
 }
 
+#sucesso {
+  margin: auto;
+  border-bottom: none;
+  max-height: 50%;
+}
+
 /* AGENTE DE VIAGENS */
 
 #agente-de-viagens.modal-dialog {
@@ -246,6 +260,7 @@ h6 {
 }
 
 #caixa-de-busca {
+  width: 600px;
   color: white;
   border-radius: 12px;
   margin-top: 5%;
@@ -400,7 +415,6 @@ justify-content: none;
   background-color:"blue"
 
 }
-
 
 @media screen and (max-width: 800px) {
   #pagamento .mb-3{
