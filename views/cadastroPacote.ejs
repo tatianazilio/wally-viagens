@@ -9,12 +9,13 @@
 
   <main class="pt-5 pb-5" id="cadastrar-pacote">
     <div class="jumbotron col-8 mx-auto">
-      <h1 class="display-6">Cadastre seu pacote!</h1>
-      <p class="lead">Você poderá oferecer mais uma opção de viagem para nossos usuários e, em poucos passos, ela já
-        estará no ar. Só precisamos obter algumas informações.</p>
 
-
-
+      <div class="container col-10">
+        <h1 class="display-6">Cadastre seu pacote!</h1>
+        <p class="lead">Você poderá oferecer mais uma opção de viagem para nossos usuários e, em poucos passos, ela já
+          estará no ar. Só precisamos obter algumas informações.</p>
+      </div>
+  
       <div class="container mt-5">
         <div class="row d-flex justify-content-center">
           <div class="col-10">
@@ -27,7 +28,7 @@
                   <div class="form-group col">
                     <label for="nome">Dê um nome ao seu pacote:</label>
                     <input type="text" class="form-control" name="nome" id="nome"
-                      placeholder="Exemplo: Carnaval em Porto Seguro 5 noites com aéreo">
+                      placeholder="Exemplo: Carnaval em Porto Seguro 5 noites com aéreo" onkeypress="return tabE(this,event)">
                   </div>
                 </div>
                 <div class="form-row d-flex justify-content-between">
@@ -44,7 +45,7 @@
                   <div class="form-group col-md-3">
                     <legend class="col-form-label">Inclui aéreo?</legend>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" class="custom-control-input" id="aereo" name="aereo">
+                      <input type="checkbox" class="custom-control-input" id="aereo" name="aereo" onkeypress="return tabE(this,event)">
                       <label class="custom-control-label" for="aereo">Sim</label>
                     </div>
                   </div>
@@ -72,7 +73,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label for="preco">Valor:</label>
-                    <input type="text" class="form-control" name="preco" id="preco">
+                    <input type="text" class="form-control" name="preco" id="preco" onkeypress="return tabE(this,event)">
                   </div>
                 </div>
                 <div class="form-row">
@@ -90,21 +91,21 @@
                   <div class="form-row mt-4">
                     <div class="form-group col-12">
                       <label for="destino">Digite o destino:</label>
-                      <input class="form-control" type="text" name="destino" id="destino">
+                      <input class="form-control" type="text" name="destino" id="destino" onkeypress="return tabE(this,event)">
                       <span id="input-destino"></span>
                     </div>
                   </div>
                   <div class="form-row mt-4">
                     <div class="form-group col-12">
                       <label for="origem">Digite as cidades de saída:</label>
-                      <input class="form-control" type="text" name="origem" id="origem">
+                      <input class="form-control" type="text" name="origem" id="origem" onkeypress="return tabE(this,event)">
                       <span id="input-origem"></span>
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-6">
                       <label for="ambiente">Selecione o ambiente que se aplica:</label>
-                      <select multiple class="form-control" size="3" name="ambiente" id="ambiente">
+                      <select multiple class="form-control" size="3" name="ambiente" id="ambiente" onkeypress="return tabE(this,event)">
                         <option>Praia</option>
                         <option>Montanha</option>
                         <option>Urbano</option>
@@ -112,7 +113,7 @@
                     </div>
                     <div class="form-group col-6">
                       <label for="atracao">Atrações a serem desfrutadas nessa viagem:</label>
-                      <select multiple class="form-control" size="3" name="atracao" id="atracao">
+                      <select multiple class="form-control" size="3" name="atracao" id="atracao" onkeypress="return tabE(this,event)">
                         <option>Resort</option>
                         <option>Museus</option>
                         <option>Prática de esportes</option>
@@ -149,6 +150,23 @@
   integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
   integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    function tabE(obj, e) {
+        var e = (typeof event != 'undefined') ? window.event : e;
+        if (e.keyCode == 13) {
+            var ele = document.forms[0].elements;
+            for (var i = 0; i < ele.length; i++) {
+                var q = (i == ele.length - 1) ? 0 : i + 1; 
+                if (obj == ele[i]) {
+                    ele[q].focus();
+                    break
+                }
+            }
+            return false;
+        }
+    }
+</script>
 
 </body>
 </html>

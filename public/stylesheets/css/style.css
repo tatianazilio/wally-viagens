@@ -259,6 +259,12 @@ h6 {
   background-size: cover;
 }
 
+#foto-cadastro {
+  background-image: url("../../images/foto-principal.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
 #caixa-de-busca {
   width: 600px;
   color: white;
@@ -304,6 +310,11 @@ h6 {
 
 .form-group {
   width: 100%;
+}
+
+.lead {
+  margin-top: 1rem;
+  font-size: 18px;
 }
 
 /* PAGAMENTO */
