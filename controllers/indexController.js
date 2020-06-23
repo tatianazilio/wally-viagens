@@ -1,6 +1,7 @@
 const { Pacote, Destino, DestinoPacote } = require("../models");
 
 let indexController = {
+
     index: async (_req, res) => {
         try {
             const pacotes = await Pacote.findAll({ limit: 4 });
@@ -22,7 +23,6 @@ let indexController = {
 
             console.log(pacotesInternacionais); */
             
-
         return res.render('index', { pacotes, pacotesNacionais, /*pacotesInternacionais */ });
         } catch (error) {
             console.log(error);

@@ -302,6 +302,10 @@ h6 {
   height: 45px;
 }
 
+.form-group {
+  width: 100%;
+}
+
 /* PAGAMENTO */
 
 #pagamento {

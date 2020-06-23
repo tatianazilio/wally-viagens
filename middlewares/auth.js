@@ -1,6 +1,11 @@
-module.exports = (req, res, next) => {
-  // user not logged in
-  if (!req.session.user) res.redirect("/login");
-  // user has a session
-  next();
-};
+function auth(req, res, next) {
+  const usuario = typeof (req.session.user) != 'undefined' ? req.session.user : false
+
+  if (usuario) {
+    return next()
+  } else {
+    return res.redirect('/loginusuario')
+  }
+}
+
+module.exports = auth

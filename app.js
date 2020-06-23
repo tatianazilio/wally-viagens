@@ -17,6 +17,13 @@ const sucessoRoute = require("./routes/sucessoRoute")
 const app = express();
 
 // view engine setup
+
+app.use(session({
+  secret: "343ji43j4n3jn4jk3n",
+  resave: true,
+  saveUninitialized: true,
+})
+);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -25,12 +32,7 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: false
 }));
-app.use(session({
-    secret: "343ji43j4n3jn4jk3n",
-    resave: true,
-    saveUninitialized: true,
-  })
-);
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname,"public","js")));
