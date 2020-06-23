@@ -31,6 +31,7 @@
                     <th>
                         <div class="d-inline-flex">
                         <a href="/pacote/<%= pacote.id %>" class="btn btn-secondary mr-2">Ver pacote</a>
+                        <a href="/cadastro/editar/<%= pacote.id %>" class="btn btn-info mr-2">Editar</a>
                         <form action="/cadastro/deletar/<%= pacote.id %>?_method=DELETE" method="POST">
                             <button type="submit" class="btn btn-danger">Excluir</button>
                         </form></div>

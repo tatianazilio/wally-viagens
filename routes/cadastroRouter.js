@@ -10,4 +10,8 @@ router.get('/', auth, cadastroController.create);
 router.post('/', upload.any(), cadastroController.store);
 router.post('/deletar/:id', cadastroController.delete);
 
+//Visualizar Form e Editar pacote
+router.get('/editar/:id', cadastroController.formUpdate);
+// route.put('/editar', cadastroController.update);
+
 module.exports = router;

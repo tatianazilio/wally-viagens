@@ -79,6 +79,50 @@ let cadastroController = {
         }
     },
 
+
+    //COMO CONFIGURAR A EXIBIÇÃO DA PÁGINA DE EDIÇÃO DE CADA PACOTE E O UPDATE?
+
+    formUpdate:(req, res)=>{
+        const {id} = req.params;
+        return res.render('editarPacote', {id})
+    },
+
+    // update: async (req, res) => {
+        
+    //     const { nome, dataDePartida, dataDeChegada, aereo, diarias, preco, descricao, destinoPais, destinoCidade, origemCidade, origemPais, ambiente, atracao } = req.body;
+    //     const [imagem] = req.files;
+
+    //     try {
+    //         const pacote = await Pacote.create({
+    //         nome,
+    //         dataDePartida,
+    //         dataDeChegada,
+    //         aereo: (aereo == 'on') ? true : false,
+    //         diarias,
+    //         preco,
+    //         descricao,
+    //         imagem: imagem.filename,
+    //         destinos: [{pais: destinoPais, cidade: destinoCidade}],
+    //         origens: [{pais: origemPais, cidade: origemCidade}],
+    //         ambientes: [{nome: ambiente}],
+    //         atracoes: [{nome: atracao}]
+    //         }, {
+    //             include: [
+    //                 { model: Origem, through: OrigemPacote, as: 'origens' }, 
+    //                 { model: Destino, through: DestinoPacote, as: 'destinos' }, 
+    //                 { model: Ambiente, through: AmbientePacote, as: 'ambientes' }, 
+    //                 { model: Atracao, through: AtracaoPacote, as: 'atracoes'}
+    //             ]
+    //         });
+        
+    //         return res.redirect("/cadastro/lista");
+
+    //     } catch (error) {
+    //         console.log(error);
+    //         return res.render('error', {error});
+    //     }
+    // },
+
 }
 
 module.exports = cadastroController;
