@@ -12,8 +12,9 @@ const pagamentoRouter = require("./routes/pagamentoRoute");
 const destinoRouter = require("./routes/destinoRoute");
 const cadastroRouter = require("./routes/cadastroRouter");
 const usuarioRoute = require("./routes/usuarioRoute");
-const loginRoute = require("./routes/loginRoute")
-const sucessoRoute = require("./routes/sucessoRoute")
+const loginRoute = require("./routes/loginRoute");
+const sucessoRoute = require("./routes/sucessoRoute");
+const newsletterRouter = require("./routes/newsletterRoute");
 
 const app = express();
 
@@ -50,6 +51,7 @@ app.use("/cadastro", cadastroRouter);
 app.use(usuarioRoute);
 app.use(loginRoute);
 app.use("/sucesso", sucessoRoute);
+app.use("/newsletter", newsletterRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
