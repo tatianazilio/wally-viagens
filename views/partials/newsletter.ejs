@@ -1,0 +1,60 @@
+<div id="newsletter" class="container">
+
+    <!--   -->
+    <form action="/newsletter" method="POST" style="width: 100%;">
+        <div class="form-group row">
+            <div class="col-sm-6 col-form-label" style="position: relative;align-self: center;">
+                <label for="email">Assine nossa Newsletter e veja nossas promoções</label>
+            </div>
+            <div class="col-sm-4" style="position: relative;align-self: center;">
+                <input name="newsmail" type="email" class="form-control-plaintext" id="newsmail"
+                    placeholder="seu-email@email.com">
+            </div>
+
+
+            <div class="col-sm-2 row" style="position: relative;align-self: center;">
+
+                <button style="width: 100%;" id="newsletterbutton" type="submit">Enviar</button>
+            </div>
+
+            <div>
+                <ul id="erronewsletter">
+                    <li>generic error #1</li>
+
+                </ul>
+            </div>
+
+        </div>
+    </form>
+
+</div>
+
+<script>
+  
+    document.getElementById("newsletterbutton").addEventListener("click",
+        function (ev) { 
+            ev.preventDefault();
+            let newsmail = document.getElementById("newsmail").value;
+            let http = new XMLHttpRequest();
+            http.open("POST", "/newsletter", true);
+            http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            http.send(JSON.stringify({"newsmail":newsmail}));              
+                
+                //resposta
+               
+            http.onreadystatechange = function() {
+                if(this.readyState == this.DONE) {
+                    if(this.status == 200) {
+                        alert("Obrigado por assinar nossa NewsLetter!!!")
+                    }
+                    else {
+                        alert("Não foi possível cadastrar seu e-mail no momento!")
+                    }
+                }
+            }
+      
+        }
+    )
+             
+</script>
+
