@@ -12,6 +12,6 @@ router.post('/deletar/:id', cadastroController.delete);
 
 //Visualizar Form e Editar pacote
 router.get('/editar/:id', cadastroController.formUpdate);
-// route.put('/editar', cadastroController.update);
+router.put('/editar/:id', cadastroController.update);
 
 module.exports = router;

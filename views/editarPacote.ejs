@@ -11,7 +11,7 @@
     <div class="jumbotron col-8 mx-auto">
 
       <div class="container col-10">
-        <h1 class="display-6">Cadastre seu pacote!</h1>
+        <h1 class="display-6">Editar Pacote</h1>
         <p class="lead">Você poderá oferecer mais uma opção de viagem para nossos usuários e, em poucos passos, ela já
           estará no ar. Só precisamos obter algumas informações.</p>
       </div>
@@ -19,7 +19,7 @@
       <div class="container mt-5">
         <div class="row d-flex justify-content-center">
           <div class="col-10">
-            <form action="/cadastro/editar?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/cadastro/editar/<%= pacote.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
               <div class="secao-formulario">
                 <h6>Informações gerais</h6>
@@ -28,7 +28,7 @@
                   <div class="form-group col">
                     <label for="nome">Dê um nome ao seu pacote:</label>
                     <input type="text" class="form-control" name="nome" id="nome"
-                      placeholder="Exemplo: Carnaval em Porto Seguro 5 noites com aéreo" onkeypress="return tabE(this,event)">
+                      placeholder="Exemplo: Carnaval em Porto Seguro 5 noites com aéreo" onkeypress="return tabE(this,event)" value="<%=pacote.nome%>">
                   </div>
                 </div>
                 <div class="form-row d-flex justify-content-between">

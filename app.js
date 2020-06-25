@@ -4,6 +4,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const session = require("express-session");
+const methodOverride = require('method-override');
 
 const indexRouter = require("./routes/indexRoute");
 const usersRouter = require("./routes/usuarioRoute");
@@ -22,8 +23,10 @@ app.use(session({
   secret: "343ji43j4n3jn4jk3n",
   resave: true,
   saveUninitialized: true,
+  maxAge: 3600000
 })
 );
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -32,6 +35,8 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: false
 }));
+
+app.use(methodOverride('_method'))
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));

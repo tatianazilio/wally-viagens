@@ -52,6 +52,7 @@ const loginController = {
         id: user.id,
         email: user.email,
       };
+
       return res.redirect("/");
     }
   },
