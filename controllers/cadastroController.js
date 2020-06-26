@@ -96,8 +96,12 @@ let cadastroController = {
     formUpdate: async (req, res)=>{
         const {id} = req.params;
         const pacote = await Pacote.findByPk(id);
+        const destino = await Destino.findByPk(id);
+        const origem = await Origem.findByPk(id);
+        const ambiente = await Ambiente.findByPk(id);
+        const atracao = await Atracao.findByPk(id);
         const API_KEY = process.env.API_KEY;
-        return res.render('editarPacote', {id, pacote, API_KEY});
+        return res.render('editarPacote', {id, pacote, destino, origem, ambiente, atracao, API_KEY});
     },
 
     update: async (req, res) => {

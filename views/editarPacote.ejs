@@ -34,11 +34,11 @@
                 <div class="form-row d-flex justify-content-between">
                   <div class="form-group col-md-6">
                     <label for="data-de-partida">Data de partida:</label>
-                    <input type="date" class="form-control" name="dataDePartida" id="data-de-partida" />
+                    <input type="date" class="form-control" name="dataDePartida" id="data-de-partida" value="">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="data-de-chegada">Data de chegada:</label>
-                    <input type="date" class="form-control" name="dataDeChegada" id="data-de-chegada" />
+                    <input type="date" class="form-control" name="dataDeChegada" id="data-de-chegada" value="">
                   </div>
                 </div>
                 <div class="form-row d-flex justify-content-between">
@@ -51,8 +51,9 @@
                   </div>
                   <div class="form-group col-md-3">
                     <label for="diarias">Diárias em hotel:</label>
-                    <select class="custom-select form-control" name="diarias" id="diarias">
-                      <option selected disabled value="">Selecione...</option>
+                    <select class="custom-select form-control" name="diarias" id="diarias" value="3">
+                      <option disabled value="">Selecione...</option>
+                      <option selected hidden><%=pacote.diarias%></option>
                       <option>0</option>
                       <option>1</option>
                       <option>2</option>
@@ -73,14 +74,14 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label for="preco">Valor:</label>
-                    <input type="text" class="form-control" name="preco" id="preco" onkeypress="return tabE(this,event)">
+                    <input type="text" class="form-control" name="preco" id="preco" onkeypress="return tabE(this,event)" value="<%=pacote.preco%>">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-12">
                     <label for="descricao">Adicione aqui a descrição deste pacote:</label>
                     <textarea class="form-control" name="descricao" id="descricao" rows="5"
-                      placeholder="Forneça detalhes sobre o destino, hospedagem, passeios, tudo que estiver incluso."></textarea>
+                      placeholder="Forneça detalhes sobre o destino, hospedagem, passeios, tudo que estiver incluso."><%=pacote.descricao%></textarea>
                   </div>
                 </div>
 
@@ -91,14 +92,14 @@
                   <div class="form-row mt-4">
                     <div class="form-group col-12">
                       <label for="destino">Digite o destino:</label>
-                      <input class="form-control" type="text" name="destino" id="destino" onkeypress="return tabE(this,event)">
+                      <input class="form-control" type="text" name="destino" id="destino" onkeypress="return tabE(this,event)" value="<%=destino.cidade%>, <%=destino.pais%>">
                       <span id="input-destino"></span>
                     </div>
                   </div>
                   <div class="form-row mt-4">
                     <div class="form-group col-12">
                       <label for="origem">Digite as cidades de saída:</label>
-                      <input class="form-control" type="text" name="origem" id="origem" onkeypress="return tabE(this,event)">
+                      <input class="form-control" type="text" name="origem" id="origem" onkeypress="return tabE(this,event)" value="<%=origem.cidade%>, <%=origem.pais%>">
                       <span id="input-origem"></span>
                     </div>
                   </div>
@@ -106,17 +107,17 @@
                     <div class="form-group col-6">
                       <label for="ambiente">Selecione o ambiente que se aplica:</label>
                       <select multiple class="form-control" size="3" name="ambiente" id="ambiente" onkeypress="return tabE(this,event)">
-                        <option>Praia</option>
-                        <option>Montanha</option>
-                        <option>Urbano</option>
+                        <option id="praia">Praia</option>
+                        <option id="montanha">Montanha</option>
+                        <option id="urbano">Urbano</option>
                       </select>
                     </div>
                     <div class="form-group col-6">
                       <label for="atracao">Atrações a serem desfrutadas nessa viagem:</label>
                       <select multiple class="form-control" size="3" name="atracao" id="atracao" onkeypress="return tabE(this,event)">
-                        <option>Resort</option>
-                        <option>Museus</option>
-                        <option>Prática de esportes</option>
+                        <option id="resort">Resort</option>
+                        <option id="museus">Museus</option>
+                        <option id="esportes">Prática de esportes</option>
                       </select>
                     </div>
                   </div>
@@ -142,7 +143,7 @@
   <%- include('partials/footer') %>
 
 
-<script src="js/places.js"></script>
+<script src="/js/places.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%=API_KEY%>&language=pt-br&libraries=places&callback=initAutocomplete"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -167,6 +168,77 @@
         }
     }
 </script>
+
+<script>
+
+var dataPartida = <%- JSON.stringify(pacote.dataDePartida).replace(/</g, '\\u003c') %>;
+var dataChegada = <%- JSON.stringify(pacote.dataDeChegada).replace(/</g, '\\u003c') %>;
+var newDatePartida = new Date(dataPartida);
+var newDateChegada = new Date(dataChegada);
+
+function GetFormattedDate(newDate) {
+ 
+    var d = new Date(newDate),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+}
+  var dataPartidaCerta = GetFormattedDate(newDatePartida);
+  var dataChegadaCerta = GetFormattedDate(newDateChegada);
+
+  document.getElementById("data-de-partida").value=dataPartidaCerta;
+  document.getElementById("data-de-chegada").value=dataChegadaCerta;
+</script>
+
+<script>
+  var aereo = <%= JSON.stringify(pacote.aereo) %>;
+  
+    function onOff() {
+      if(aereo == true) {
+      document.getElementById("aereo").setAttribute("checked", "");
+      }
+    }
+    onOff();
+  </script>
+
+<script>
+  var ambiente = <%- JSON.stringify(ambiente.nome).replace(/</g, '\\u003c') %>;
+  var atracao = <%- JSON.stringify(atracao.nome).replace(/</g, '\\u003c') %>;
+  
+    function ambienteSeletor() {
+      if(ambiente == "Praia") {
+      document.getElementById("praia").setAttribute("selected", "");
+      }
+
+      if(ambiente == "Montanha") {
+      document.getElementById("montanha").setAttribute("selected", "");
+      }
+
+      if(ambiente == "Urbano") {
+      document.getElementById("urbano").setAttribute("selected", "");
+      }
+
+      if(atracao == "Resort") {
+      document.getElementById("resort").setAttribute("selected", "");
+      }
+
+      if(atracao == "Museus") {
+      document.getElementById("museus").setAttribute("selected", "");
+      }
+
+      if(atracao == "Prática de esportes") {
+      document.getElementById("esporte").setAttribute("selected", "");
+      }
+    }
+    ambienteSeletor();
+  </script>
 
 </body>
 </html>

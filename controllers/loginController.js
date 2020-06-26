@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 const loginController = {
 
-  create: (_req, res) => res.render("auth/login"),
+  create: (req, res) => res.render("auth/login", {usuarioLogado:req.session.user}),
 
   logar: async (req, res) => {
     const {

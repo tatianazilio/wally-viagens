@@ -15,12 +15,31 @@
                 <li class="nav-item"><a class="nav-link" href="#">Ajuda</a></li>
                 <li class="nav-item"><a id="botao-cadastrar" class="nav-link" href="/cadastrousuario">Cadastrar</a></li>
                 <li class="nav-item"><a id="botao-entrar" class="nav-link" href="/loginusuario">Entrar</a></li>
-                <!-- <li class="nav-item"><a id="usuario-logado" class="nav-link" href="/loginusuario">Usuário</a></li> -->
+                <li class="nav-item"><a id="usuario-logado" class="nav-link" href="/loginusuario">Usuário</a></li>
                
             </ul>
         </div>
     </nav>
 </header>
 
+
+<script>
+    function loginHeader() {
+        
+    const usuario = typeof (usuarioLogado) != 'undefined' ? usuarioLogado : false
+    console.log(usuario)
+
+  if (!usuario) {
+    var email = <%- JSON.stringify(usuarioLogado.email).replace(/</g, '\\u003c')%>
+    document.getElementById("botao-entrar").style.display = "none";
+    document.getElementById("botao-cadastrar").style.display = "none";
+    document.getElementById("usuario-logado").innerHTML = "opa";
+  }else {
+    document.getElementById("usuario-logado").style.display = "none"; 
+}
+}
+</script>
+    
+<script>loginHeader()</script>
 
 

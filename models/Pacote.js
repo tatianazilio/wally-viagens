@@ -10,11 +10,11 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             },
             dataDePartida: {
-                type: DataTypes.DATE,
+                type: DataTypes.DATEONLY,
                 as: 'data-partida'
             },
             dataDeChegada: {
-                type: DataTypes.DATE,
+                type: DataTypes.DATEONLY,
                 as: 'data-chegada'
             },
             aereo: DataTypes.BOOLEAN,
