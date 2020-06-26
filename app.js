@@ -9,7 +9,6 @@ const methodOverride = require('method-override');
 const indexRouter = require("./routes/indexRoute");
 const usersRouter = require("./routes/usuarioRoute");
 const pagamentoRouter = require("./routes/pagamentoRoute");
-const destinoRouter = require("./routes/destinoRoute");
 const cadastroRouter = require("./routes/cadastroRouter");
 const usuarioRoute = require("./routes/usuarioRoute");
 const loginRoute = require("./routes/loginRoute");
@@ -41,12 +40,10 @@ app.use(methodOverride('_method'))
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(path.join(__dirname,"public","js")));
 
 app.use("/", indexRouter);
 app.use("/usuarios", usersRouter);
 app.use("/pagamento", pagamentoRouter);
-app.use("/destino", destinoRouter);
 app.use("/cadastro", cadastroRouter);
 app.use(usuarioRoute);
 app.use(loginRoute);
