@@ -107,7 +107,7 @@ let cadastroController = {
     update: async (req, res) => {
         const {id} = req.params;
         const { nome, dataDePartida, dataDeChegada, aereo, diarias, preco, descricao, destinoPais, destinoCidade, origemCidade, origemPais, ambiente, atracao } = req.body;
-        const [imagem] = req.files;
+        let [imagem] = req.files;
 
         try {
             const pacote = await Pacote.update({
@@ -118,7 +118,7 @@ let cadastroController = {
             diarias,
             preco,
             descricao,
-            imagem: imagem.filename,
+            imagem: imagem ? imagem.filename:undefined,
             destinos: [{pais: destinoPais, cidade: destinoCidade}],
             origens: [{pais: origemPais, cidade: origemCidade}],
             ambientes: [{nome: ambiente}],
@@ -129,12 +129,12 @@ let cadastroController = {
                     { model: Destino, through: DestinoPacote, as: 'destinos' }, 
                     { model: Ambiente, through: AmbientePacote, as: 'ambientes' }, 
                     { model: Atracao, through: AtracaoPacote, as: 'atracoes'}
-                ]
-            }, {
+                ], 
                 where: {
                     id:id
                 }
-            });
+            }
+            );
         
             return res.redirect("/cadastro/lista");
 

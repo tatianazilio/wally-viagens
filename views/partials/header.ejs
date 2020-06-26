@@ -25,18 +25,12 @@
 
 <script>
     function loginHeader() {
-        
-    const usuario = typeof (usuarioLogado) != 'undefined' ? usuarioLogado : false
-    console.log(usuario)
 
-  if (!usuario) {
-    var email = <%- JSON.stringify(usuarioLogado.email).replace(/</g, '\\u003c')%>
-    document.getElementById("botao-entrar").style.display = "none";
-    document.getElementById("botao-cadastrar").style.display = "none";
-    document.getElementById("usuario-logado").innerHTML = "opa";
-  }else {
-    document.getElementById("usuario-logado").style.display = "none"; 
-}
+    if(typeof usuarioLogado != "undefined") {
+        console.log("tem")
+    }else{
+        console.log(usuarioLogado)
+    }
 }
 </script>
     
