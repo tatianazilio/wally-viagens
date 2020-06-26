@@ -25,12 +25,26 @@
 
 <script>
     function loginHeader() {
+<<<<<<< HEAD
 
     if(typeof usuarioLogado != "undefined") {
         console.log("tem")
     }else{
         console.log(usuarioLogado)
     }
+=======
+        
+    const usuario = typeof (usuarioLogado) != 'undefined' ? usuarioLogado : false
+    console.log(usuario)
+
+  if (!usuario) {
+    document.getElementById("botao-entrar").style.display = "none";
+    document.getElementById("botao-cadastrar").style.display = "none";
+    document.getElementById("usuario-logado").innerHTML = "opa";
+  }else {
+    document.getElementById("usuario-logado").style.display = "none"; 
+}
+>>>>>>> 0fa28dcab9a5a00a444bab6b155bd52d248052ca
 }
 </script>
     
