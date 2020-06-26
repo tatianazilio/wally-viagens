@@ -30,7 +30,6 @@
     console.log(usuario)
 
   if (!usuario) {
-    var email = <%- JSON.stringify(usuarioLogado.email).replace(/</g, '\\u003c')%>
     document.getElementById("botao-entrar").style.display = "none";
     document.getElementById("botao-cadastrar").style.display = "none";
     document.getElementById("usuario-logado").innerHTML = "opa";

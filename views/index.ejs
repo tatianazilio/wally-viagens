@@ -103,7 +103,7 @@
   <h3>Conheça o Brasil</h3>
   <h5>Viaje pelo Brasil e descubra paisagens maravilhosas</h5>
   <div class="row justify-content-around">
-    <% pacotes.forEach((pacote) => { %>
+    <% pacotesNacionais.forEach((pacote) => { %>
       <div class="card" style="width: 15rem;">
         <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top" alt="Tahiti" />
         <div class="card-body">
@@ -130,7 +130,7 @@
   <h3>Viaje pelo mundo</h3>
   <h5>Escolha algum destes pacotes para conhecer outros países</h5>
   <div class="row justify-content-around">
-    <% pacotes.forEach((pacote) => { %>
+    <% pacotesInternacionais.forEach((pacote) => { %>
       <div class="card" style="width: 15rem;">
         <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top" alt="<%= pacote.nome %>" />
         <div class="card-body">
