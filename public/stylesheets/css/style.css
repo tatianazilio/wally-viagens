@@ -317,6 +317,20 @@ h6 {
   font-size: 18px;
 }
 
+/* PACOTES */
+
+.pacote-imagem {
+  width: 100%; 
+  height: 60vh; 
+  object-fit:cover;
+}
+
+.comprar {
+  background-color: #f95f62ff;
+  color: white;
+  border: none;
+}
+
 /* PAGAMENTO */
 
 #pagamento {
