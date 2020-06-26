@@ -91,7 +91,7 @@
           <% } %>
         </div>
             <div class="card-footer text-center">
-              <a href="#" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
+              <a href="/cadastro/<%=pacote.id%>" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
             </div>
       </div>
     <% }) %>
@@ -116,7 +116,7 @@
           <% } %>
         </div>
             <div class="card-footer text-center">
-              <a href="#" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
+              <a href="/cadastro/<%=pacote.id%>" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
             </div>
       </div>
     <% }) %>
@@ -132,7 +132,7 @@
   <div class="row justify-content-around">
     <% pacotes.forEach((pacote) => { %>
       <div class="card" style="width: 15rem;">
-        <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top" alt="Tahiti" />
+        <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top" alt="<%= pacote.nome %>" />
         <div class="card-body">
           <h5 class="card-title"><%= pacote.nome %></h5>
           <p class="card-text">
@@ -143,7 +143,7 @@
           <% } %>
         </div>
             <div class="card-footer text-center">
-              <a href="#" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
+              <a href="/cadastro/<%=pacote.id%>" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
             </div>
       </div>
     <% }) %>
