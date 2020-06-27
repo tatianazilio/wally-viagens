@@ -11,8 +11,12 @@
     
     <section class="m-5">
         <div class="d-flex justify-content-start">
-            <h3><span class="badge badge-secondary mr-1">Natureza</span></h3>
-            <h3><span class="badge badge-secondary mr-1">Em familia</span></h3>
+            <% pacote.ambientes.forEach((ambiente) => { %>
+                <h3><span class="badge badge-secondary mr-1"><%= ambiente.nome%></span></h3>
+            <% }) %>
+            <% pacote.atracoes.forEach((atracao) => { %>
+                <h3><span class="badge badge-secondary mr-1"><%= atracao.nome%></span></h3>
+            <% }) %>
         </div>
         <div class="titulo">
             <h1><%= pacote.nome %></h1>

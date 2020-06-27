@@ -32,9 +32,13 @@ let cadastroController = {
 
     view: async (req, res) => {
         try {
-            let pacote = await Pacote.findByPk(req.params.id);
+            let pacote = await Pacote.findByPk(req.params.id, {
+                include: [{ all: true }],
+            });
             console.log(pacote);
+
             return res.render('destino', { pacote });
+            
         } catch (error) {
             console.log(error);
             return res.render('error', {error});
