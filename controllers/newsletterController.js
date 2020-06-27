@@ -21,7 +21,7 @@ const newsletterController = {
             }
            
         )
-        .catch(error => { console.log(error);
+        .catch(error => { 
             return res.status(400).end()
             
         });

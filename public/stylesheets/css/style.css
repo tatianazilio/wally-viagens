@@ -59,7 +59,7 @@ h6 {
 }
 
 .lista-footer-horizontal {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .lista-footer-horizontal li {
@@ -334,10 +334,10 @@ h6 {
 /* PAGAMENTO */
 
 #pagamento {
-  /* background-color: rgb(177, 177, 177);
-border-radius: 12px;
-padding: 2%;
-margin: 2%;*/
+background-image: url(../../images/planning2.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+
 display: flex;
 flex-wrap: wrap;
 align-items: center;
@@ -389,6 +389,10 @@ align-items: center;
 
 display: flexbox;
 justify-content: none;
+}
+
+.nfoi{
+  display: inline;
 }
 
 .quadro-externo {
@@ -450,7 +454,12 @@ display: flex;
 width: 100%;
 /* background-color: rgba(255, 255, 255, 0.37); */
 align-content: center;
+background-color: rgba(255, 255, 255, 0.205);
+margin-bottom: 5px;
+border-radius: 4px;
 }
+
+
 
 #erronewsletter{
 display: none;
