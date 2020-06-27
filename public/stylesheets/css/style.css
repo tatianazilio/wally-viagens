@@ -360,7 +360,7 @@ border-bottom-left-radius: 0;
 }
 
 #pagamento .btn-block{
-background-color: rgb(219, 219, 219);
+background-color: white;
 display: flex;
 
 }
@@ -372,11 +372,17 @@ margin: 2px 0 0 10px;
 #pagamento #foto-pedido{
 background-size:cover ;
 background-position: center;
-
 }
+
+#pagamento .card{
+  border-width: 0;
+}
+
+
 #pagamento .accordion .card{
-background-color: rgb(220, 220, 220);
+background-color: #e9ecef;
 width: 100%;
+border-width: 1;
 }
 
 .imagem-resumo {

@@ -18,7 +18,7 @@
 
 
         <!-- pedido quadro 1 - Resumo do pedido -->
-        <div class="card" style="width: 95%; background-color: rgb(199, 199, 199); margin: 32px;">
+        <div class="card container" style="background-color:#e9ecef; margin: 32px;">
 
 
             <div style="margin: 20px">
@@ -28,19 +28,22 @@
             </div>
 
             <div class="card mb-3"
-                style="width: 95%; display: flexbox; align-self: center; background-color: rgb(220, 220, 220);">
+                style="width: 95%; display: flexbox; align-self: center; background-color:white;">
                 <div class="row no-gutters">
                     <!-- imagem -->
-                    <div id="foto-pedido" class="col-md-3" style="background-image">
-                        <img src="/images/uploads/<%= pacote.imagem %>" alt="" class="pacote-imagem img-fluid">
+                    <div id="foto-pedido" class="col-md-3" style="background-image: url('../../images/destaques-ex1-tahiti.jpg');">
+                        <!-- <img src="../../images/destaques-ex1-tahiti.jpg" class="img-fluid" alt="Tahiti"> -->
                     </div>
 
                     <!-- resumo do pedido -->
-                    <div class="col-md-6">      
+                    <div class="col-md-6">
+                       
                         <div style="height: fit-content;">
                             <h5><%=pacote.nome%></h5>
                             <p><%=pacote.descricao%></p>
                         </div>
+
+
                     </div>
 
                     <!-- valor -->
@@ -88,7 +91,7 @@
 
         </div>
 
-        <div class="card" style="width: 95%; background-color: rgb(199, 199, 199); margin: 0 32px 32px 32px;">
+        <div class="card container" style="width: 95%; background-color: #e9ecef; margin: 0 32px 32px 32px;">
 
             
 
@@ -172,7 +175,7 @@
 
 
 
-        <div class="card" style="width: 95%; background-color: rgb(199, 199, 199); margin: 0 32px 0 32px;">
+        <div class="card container" style="width: 95%; background-color: #e9ecef; margin: 0 32px 32px 32px;">
             <div style="margin: 20px;">
                 <h3>Forma de pagamento</h3>
             </div>
@@ -180,7 +183,7 @@
 
             <div class="accordion" id="accordionExample">
                 <div class="card">
-                    <div class="card-header" id="headingOne" style="background-color: rgb(219,219,219);">
+                    <div class="card-header" id="headingOne" style="background-color:white;">
                         <h2 class="mb-0">
                             <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                                 data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
@@ -200,7 +203,7 @@
                         </h2>
                     </div>
 
-                    <div id="collapseOne" class="collapse.show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body" style="display:flex;align-content: center;">
 
 
@@ -216,7 +219,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header" id="headingTwo" style="background-color: rgb(219,219,219)">
+                    <div class="card-header" id="headingTwo" style="background-color:white">
                         <h2 class="mb-0">
                             <button class="btn btn-link btn-block text-left collapsed" type="button"
                                 data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
@@ -295,7 +298,7 @@
                         </div>
                     </div>
                 </div>
-
+                <br>
             </div>
 
         </div>
