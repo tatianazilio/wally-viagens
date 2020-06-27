@@ -45,12 +45,16 @@ h6 {
 
 .navbar {
   padding: 0px;
+  justify-content: left;
+  
+  
 }
 
 .navbar-nav .nav-item .nav-link {
   font-family: "Lucida Grande","Open Sans", Helvetica, sans-serif, Arial;
   padding-left: 30px;
   color: white;
+  
 }
 
 .lista-footer {
@@ -78,7 +82,7 @@ h6 {
 }
 
 .footer {
-  background-color: rgb(179, 177, 177);
+  background-color: rgb(241, 239, 239);
 }
 
 .footer-copyright {
@@ -357,6 +361,10 @@ border-color: #f95f62ff;
 border-top-left-radius: 0;
 border-bottom-left-radius: 0;
 
+}
+
+#pagamento .card1 {
+  color: red;
 }
 
 #pagamento .btn-block{
