@@ -1,4 +1,14 @@
-const { Pacote, Ambiente, AmbientePacote, Atracao, AtracaoPacote, Destino, DestinoPacote, Origem, OrigemPacote } = require("../models");
+const { 
+    Pacote, 
+    Ambiente, 
+    AmbientePacote, 
+    Atracao, 
+    AtracaoPacote, 
+    Destino, 
+    DestinoPacote, 
+    Origem, 
+    OrigemPacote 
+} = require("../models");
 const moment = require('moment');
 require('dotenv').config();
 
@@ -6,13 +16,12 @@ let cadastroController = {
     index: async (_req, res) => {
         try {
             let pacotes = await Pacote.findAll({
-            attributes: ['id', 'nome', 'dataDePartida', 'dataDeChegada']
+                attributes: ['id', 'nome', 'dataDePartida', 'dataDeChegada']
             });
 
             pacotes.forEach(pacote => {
                 pacote.ida = moment(pacote.dataDePartida).locale('pt-br').format('L');
                 pacote.volta = moment(pacote.dataDeChegada).locale('pt-br').format('L');
-
             });
             return res.render('listaPacotes', { pacotes });
         } catch (error) {
@@ -25,7 +34,6 @@ let cadastroController = {
         try {
             let pacote = await Pacote.findByPk(req.params.id);
             console.log(pacote);
-            
             return res.render('destino', { pacote });
         } catch (error) {
             console.log(error);
