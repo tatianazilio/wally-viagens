@@ -52,8 +52,11 @@ const loginController = {
         id: user.id,
         email: user.email,
       };
-
-      return res.redirect("/");
+      if(!req.session.previousUrl) {
+        res.redirect("/")
+      }else {
+        res.redirect(req.session.previousUrl);
+      }
     }
   },
 

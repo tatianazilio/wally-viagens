@@ -5,6 +5,6 @@ const auth = require('../middlewares/auth');
 const upload = require("../config/uploads");
 
 /* GET pagamento. */
-router.get('/:id', pagamentoController.view)
+router.get('/:id', auth, pagamentoController.view)
 
 module.exports = router;
