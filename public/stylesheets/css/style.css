@@ -211,7 +211,7 @@ h6 {
 }
 
 .btn-primary {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 0px;
   width: 100%;
   height: 45px;
@@ -278,6 +278,40 @@ h6 {
   margin-bottom: 5%;
   padding: 2%;
   background-color: rgba(0, 0, 0, 0.267);
+}
+
+#form-busca {
+  width: 800px;
+}
+
+::-webkit-input-placeholder {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
+  font-size: 15px;
+  color: grey;
+}
+
+#hospedes.custom-select {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
+  font-size: 15px;
+  color: grey;
+}
+
+#destino.form-control {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
+  font-size: 15px;
+  color: grey;
+}
+
+#checkin.form-control {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
+  font-size: 15px;
+  color: grey;
+}
+
+#checkout.form-control {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
+  font-size: 15px;
+  color: grey;
 }
 
 .destaques {
@@ -383,7 +417,6 @@ background-position: center;
   border-width: 0;
 }
 
-
 #pagamento .accordion .card{
 background-color: #e9ecef;
 width: 100%;
@@ -470,12 +503,9 @@ margin-bottom: 5px;
 border-radius: 4px;
 }
 
-
-
 #erronewsletter{
 display: none;
 }
-
 
 @media screen and (max-width: 800px) {
 #pagamento .mb-3{
