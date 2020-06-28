@@ -316,6 +316,12 @@ h6 {
   width: 100%;
 }
 
+.textcolor a{
+
+  color: white;
+
+}
+
 .lead {
   margin-top: 1rem;
   font-size: 18px;
@@ -363,9 +369,7 @@ border-bottom-left-radius: 0;
 
 }
 
-#pagamento .card1 {
-  color: red;
-}
+
 
 #pagamento .btn-block{
 background-color: rgb(219, 219, 219);

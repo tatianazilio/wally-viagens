@@ -87,11 +87,12 @@
             <%= pacote.descricao %>
           </p>
           <% if (pacote.aereo) { %>
-            <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" />
+            <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" /> 
+            <span class="card-link">R$ <%= pacote.preco %> / pessoa</span>
           <% } %>
         </div>
-            <div class="card-footer text-center">
-              <a href="/cadastro/<%=pacote.id%>" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
+            <div class="btn-danger btn textcolor text-center">
+              <a href="/cadastro/<%=pacote.id%>"> Agende agora! </a>
             </div>
       </div>
     <% }) %>
