@@ -92,12 +92,10 @@ let cadastroController = {
                     { model: Ambiente, through: AmbientePacote, as: 'ambientes' }, 
                     { model: Atracao, through: AtracaoPacote, as: 'atracoes'}
                 ]
-            });
-        
+            });            
             return res.redirect("/cadastro/lista");
 
         } catch (error) {
-            console.log(error);
             return res.render('error', {error, usuario:req.session.usuario});
         }
     },
@@ -109,7 +107,6 @@ let cadastroController = {
             const resultado = await Pacote.destroy({ where: { id } });
             return res.redirect("/cadastro/lista");
         } catch (error) {
-            console.log(error);
             return res.render('error', {error, usuario:req.session.usuario});
         }
     },
@@ -174,7 +171,6 @@ let cadastroController = {
             return res.redirect("/cadastro/lista");
 
         } catch (error) {
-            console.log(error);
             return res.render('error', {error, usuario:req.session.usuario});
         }
     },

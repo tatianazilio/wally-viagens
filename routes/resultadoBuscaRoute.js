@@ -4,6 +4,5 @@ const resultadoBuscaController = require('../controllers/resultadoBuscaControlle
 
 /* GET home page. */
 
-router.get('/', resultadoBuscaController.index);
 
 module.exports = router;

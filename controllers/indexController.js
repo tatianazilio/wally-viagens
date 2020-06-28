@@ -1,9 +1,13 @@
+require('dotenv').config();
 const { Pacote, Destino, DestinoPacote } = require("../models");
 const { Op } = require("sequelize");
+
 
 let indexController = {
 
     index: async (req, res) => {
+        const API_KEY = process.env.API_KEY;
+        const usuario = (req.session.usuario) ? req.session.usuario : false;
         try {
             const pacotes = await Pacote.findAll({ limit: 4 });
             const pacotesNacionais = await Pacote.findAll({
@@ -20,11 +24,12 @@ let indexController = {
                 limit: 4,
             });
             
-        return res.render('index', { pacotes, pacotesNacionais, pacotesInternacionais, usuario: req.session.usuario });
+            return res.render('index', { pacotes, pacotesNacionais, pacotesInternacionais, API_KEY, usuario });
         } catch (error) {
-            console.log(error);
-            return res.render('error', {error, usuario:req.session.usuario});
+            const usuario = (req.session.usuario) ? req.session.usuario : false;
+            return res.render('error', { error, usuario });
         }
     }
 }
+
 module.exports = indexController;
