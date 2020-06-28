@@ -17,19 +17,19 @@ const usuarioController = {
         if (email == "" && password == "") {
             return res.render("auth/cadastro", {
                 msg1: "O campo email não pode estar vazio!",
-                msg2: "O campo senha não pode estar vazio!"
+                msg2: "O campo senha não pode estar vazio!", usuario:req.session.usuario
             })
         }
 
         if (email == "" && password !== "") {
             return res.render("auth/cadastro", {
-                msg1: "O campo email não pode estar vazio!"
+                msg1: "O campo email não pode estar vazio!", usuario:req.session.usuario
             })
         }
 
         if (password == "" && email !== "") {
             return res.render("auth/cadastro", {
-                msg2: "O campo senha não pode estar vazio!"
+                msg2: "O campo senha não pode estar vazio!", usuario:req.session.usuario
             })
         }
 
@@ -58,7 +58,7 @@ const usuarioController = {
                 return res.render("auth/sucesso", {usuario:req.session.usuario})
             } else {
                 return res.render("auth/cadastro", {
-                    msg3: "Usuário já cadastrado!",
+                    msg3: "Usuário já cadastrado!", usuario:req.session.usuario
                 });
             }
         };

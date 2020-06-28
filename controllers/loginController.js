@@ -15,19 +15,19 @@ const loginController = {
     if (email == "" && password == "") {
       return res.render("auth/login", {
         msg1: "Informe o seu email",
-        msg2: "Informe a sua senha"
+        msg2: "Informe a sua senha", usuario:req.session.usuario
       })
     }
 
     if (email == "" && password !== "") {
       return res.render("auth/login", {
-        msg1: "Informe o seu email"
+        msg1: "Informe o seu email", usuario:req.session.usuario
       })
     }
 
     if (password == "" && email !== "") {
       return res.render("auth/login", {
-        msg2: "Informe a sua senha"
+        msg2: "Informe a sua senha", usuario:req.session.usuario
       })
     }
 

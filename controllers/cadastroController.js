@@ -94,7 +94,7 @@ let cadastroController = {
                 ]
             });
         
-            return res.redirect("/cadastro/lista");
+            return res.redirect("/cadastro/lista", {usuario:req.session.usuario});
 
         } catch (error) {
             console.log(error);
