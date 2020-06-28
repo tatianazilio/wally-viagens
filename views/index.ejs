@@ -51,9 +51,9 @@
 
 <!--SEÇÃO VIAGENS EM ALTA-->
 <section class="container destaques mt-5">
-  <h3>Viagens em alta</h3>
-  <h5>Os pacotes mais comprados pelos usuários</h5>
-  <div class="row justify-content-around">
+  <h3 id="titulos-cards">Viagens em alta</h3>
+  <h5 id="titulos-cards">Os pacotes mais comprados pelos usuários</h5>
+  <div class="row justify-content-around mt-5">
     <% pacotes.forEach((pacote) => { %>
       <div class="card" style="width: 15rem;">
         <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top" alt="Tahiti" />
@@ -68,7 +68,7 @@
           <% } %>
         </div>
             <div class="btn-danger btn textcolor text-center">
-              <a href="/cadastro/<%=pacote.id%>"> Agende agora! </a>
+              <a href="/cadastro/<%=pacote.id%>"> Ver Pacote! </a>
             </div>
       </div>
     <% }) %>
@@ -77,9 +77,9 @@
 
 <!--SEÇÃO BRASIL-->
 <section class="container destaques mt-5">
-  <h3>Conheça o Brasil</h3>
-  <h5>Viaje pelo Brasil e descubra paisagens maravilhosas</h5>
-  <div class="row justify-content-around">
+  <h3 id="titulos-cards">Conheça o Brasil</h3>
+  <h5 id="titulos-cards">Viaje pelo Brasil e descubra paisagens maravilhosas</h5>
+  <div class="row justify-content-around mt-5">
     <% pacotesNacionais.forEach((pacote) => { %>
       <div class="card" style="width: 15rem;">
         <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top" alt="Tahiti" />
@@ -104,9 +104,9 @@
 
 <!--SEÇÃO MUNDO-->
 <section class="container destaques mt-5 mb-5">
-  <h3>Viaje pelo mundo</h3>
-  <h5>Escolha algum destes pacotes para conhecer outros países</h5>
-  <div class="row justify-content-around">
+  <h3 id="titulos-cards">Viaje pelo mundo</h3>
+  <h5 id="titulos-cards">Escolha algum destes pacotes para conhecer outros países</h5>
+  <div class="row justify-content-around mt-5">
     <% pacotesInternacionais.forEach((pacote) => { %>
       <div class="card" style="width: 15rem;">
         <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top" alt="<%= pacote.nome %>" />

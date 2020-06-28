@@ -21,6 +21,10 @@ h6 {
   color: rgb(82, 82, 82);
 }
 
+#titulos-cards {
+  margin-left: 10px;
+}
+
 /* BOOTSTRAP */
 
 .btn-link {
@@ -46,7 +50,6 @@ h6 {
 .navbar {
   padding: 0px;
   justify-content: left;
-  
 }
 
 .navbar-nav .nav-item .nav-link {
@@ -239,6 +242,12 @@ h6 {
   max-height: 50%;
 }
 
+/* LISTA PACOTES */
+
+#listapacotes {
+  min-height: 600px;
+}
+
 /* RESULTADO BUSCA */
 
 #resultado-busca.row.justify-content-around {
@@ -359,6 +368,12 @@ margin-top: 2rem;
 }
 
 #cadastrar-pacote {
+  background-image: url(../../images/planning.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#lista-pacote {
   background-image: url(../../images/planning.jpg);
   background-repeat: no-repeat;
   background-size: cover;
