@@ -60,6 +60,11 @@ const loginController = {
     }
   },
 
+  logout: (req, res) => {
+    req.session.destroy();
+    return res.redirect("/");
+  },
+
   destroy: (req, res) => {
     req.session = undefined;
     return res.redirect("/");
