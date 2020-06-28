@@ -53,6 +53,11 @@ h6 {
   color: white;
 }
 
+.menu-user {
+  background: none;
+  font-size: smaller;
+}
+
 .lista-footer {
   margin-top: 60px;
   margin-bottom: 60px;

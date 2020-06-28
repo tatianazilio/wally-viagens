@@ -1,4 +1,4 @@
-<header class="navbar">
+<header class="navbar container">
 
     <nav class="container-fluid navbar navbar-expand-lg navbar-dark">
 
@@ -13,8 +13,21 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="/cadastro">Anuncie sua viagem!</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Ajuda</a></li>
-                <li class="nav-item"><a id="botao-cadastrar" class="nav-link" href="/cadastrousuario">Cadastrar</a></li>
-                <li class="nav-item"><a id="botao-entrar" class="nav-link" href="/loginusuario">Entrar</a></li>     
+                <% if (usuario) { %>
+                    <li class="nav-item">
+                        <div class="dropdown nav-link">
+                            <p class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <%= usuario.email %>
+                            </p>
+                            <div class="dropdown-menu menu-user" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Sair</a>
+                            </div>
+                        </div>
+                    </li>
+                <% } else {%> 
+                    <li class="nav-item"><a id="botao-cadastrar" class="nav-link" href="/cadastrousuario">Cadastrar</a></li>
+                    <li class="nav-item"><a id="botao-entrar" class="nav-link" href="/loginusuario">Entrar</a></li>
+                <% } %>     
             </ul>
         </div>
     </nav>      

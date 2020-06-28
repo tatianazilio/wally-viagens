@@ -3,8 +3,7 @@ const config = require("../config/database");
 const bcrypt = require("bcrypt");
 
 const loginController = {
-
-  create: (req, res) => res.render("auth/login", {usuarioLogado:req.session.user}),
+  create: (req, res) => res.render("auth/login", {usuario:req.session.usuario}),
 
   logar: async (req, res) => {
     const {
@@ -48,10 +47,11 @@ const loginController = {
         });
       }
 
-      req.session.user = {
+      req.session.usuario = {
         id: user.id,
         email: user.email,
       };
+
       if(!req.session.previousUrl) {
         res.redirect("/")
       }else {

@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 const usuarioController = {
 
-    create: (_req, res) => res.render("auth/cadastro"),
+    create: (_req, res) => res.render("auth/cadastro", { usuario:req.session.usuario }),
 
     store: async (req, res) => {
         const {

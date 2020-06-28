@@ -23,7 +23,7 @@ let cadastroController = {
                 pacote.ida = moment(pacote.dataDePartida).locale('pt-br').format('L');
                 pacote.volta = moment(pacote.dataDeChegada).locale('pt-br').format('L');
             });
-            return res.render('listaPacotes', { pacotes });
+            return res.render('listaPacotes', { pacotes, usuario:req.session.usuario });
         } catch (error) {
             console.log(error);
             return res.render('error', {error});
@@ -35,9 +35,8 @@ let cadastroController = {
             let pacote = await Pacote.findByPk(req.params.id, {
                 include: [{ all: true }],
             });
-            console.log(pacote);
 
-            return res.render('destino', { pacote });
+            return res.render('destino', { pacote, usuario:req.session.usuario});
             
         } catch (error) {
             console.log(error);
@@ -48,7 +47,7 @@ let cadastroController = {
     create: (req, res) => {
         const API_KEY = process.env.API_KEY;
         try {
-            return res.render('cadastroPacote', {usuarioLogado:req.session.user, API_KEY});
+            return res.render('cadastroPacote', {usuario:req.session.usuario, API_KEY});
         } catch (error) {
             console.log(error);
             return res.render('error', {error});
@@ -56,8 +55,20 @@ let cadastroController = {
     },
 
     store: async (req, res) => {
-        
-        const { nome, dataDePartida, dataDeChegada, aereo, diarias, preco, descricao, destinoPais, destinoCidade, origemCidade, origemPais, ambiente, atracao } = req.body;
+        const { nome, 
+            dataDePartida, 
+            dataDeChegada, 
+            aereo, 
+            diarias, 
+            preco, 
+            descricao, 
+            destinoPais, 
+            destinoCidade, 
+            origemCidade, 
+            origemPais, 
+            ambiente, 
+            atracao 
+        } = req.body;
         const [imagem] = req.files;
 
         try {
@@ -107,18 +118,34 @@ let cadastroController = {
 
     formUpdate: async (req, res)=>{
         const {id} = req.params;
-        const pacote = await Pacote.findByPk(id);
-        const destino = await Destino.findByPk(id);
-        const origem = await Origem.findByPk(id);
-        const ambiente = await Ambiente.findByPk(id);
-        const atracao = await Atracao.findByPk(id);
+        const pacote = await Pacote.findByPk(id, {
+            include: [{ all: true }],
+        })
+        const destino = pacote.destinos[0];
+        const origem = pacote.origens[0];
+        const ambiente = pacote.ambientes[0];
+        const atracao = pacote.atracoes[0];
         const API_KEY = process.env.API_KEY;
-        return res.render('editarPacote', {id, pacote, destino, origem, ambiente, atracao, API_KEY});
+        return res.render('editarPacote', {id, pacote, destino, origem, ambiente, atracao, usuario:req.session.usuario, API_KEY});
     },
 
     update: async (req, res) => {
         const {id} = req.params;
-        const { nome, dataDePartida, dataDeChegada, aereo, diarias, preco, descricao, destinoPais, destinoCidade, origemCidade, origemPais, ambiente, atracao } = req.body;
+        const { 
+            nome, 
+            dataDePartida, 
+            dataDeChegada, 
+            aereo, 
+            diarias, 
+            preco, 
+            descricao, 
+            destinoPais, 
+            destinoCidade, 
+            origemCidade, 
+            origemPais, 
+            ambiente, 
+            atracao 
+        } = req.body;
         let [imagem] = req.files;
 
         try {
@@ -142,12 +169,8 @@ let cadastroController = {
                     { model: Ambiente, through: AmbientePacote, as: 'ambientes' }, 
                     { model: Atracao, through: AtracaoPacote, as: 'atracoes'}
                 ], 
-                where: {
-                    id:id
-                }
-            }
-            );
-        
+                where: { id }
+            });
             return res.redirect("/cadastro/lista");
 
         } catch (error) {
