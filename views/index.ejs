@@ -88,8 +88,8 @@
           </p>
           <% if (pacote.aereo) { %>
             <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" /> 
-            <span class="card-link">R$ <%= pacote.preco %> / pessoa</span>
           <% } %>
+          <span class="card-link">R$ <%= pacote.preco %> / pessoa</span>
         </div>
             <div class="btn-danger btn textcolor text-center">
               <a href="/cadastro/<%=pacote.id%>"> Ver Pacote! </a>
@@ -110,16 +110,15 @@
         <div class="card-body">
           <h5 class="card-title"><%= pacote.nome %></h5>
           <p class="card-text">
-            <%= pacote.descricao %>
-          </p>
-          <% if (pacote.aereo) { %>
-            <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" />
-          <% } %>
+            <% if (pacote.aereo) { %>
+              <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" /> 
+            <% } %>
+            <span class="card-link">R$ <%= pacote.preco %> / pessoa</span>
+          </div>
+              <div class="btn-danger btn textcolor text-center">
+                <a href="/cadastro/<%=pacote.id%>"> Ver Pacote! </a>
+              </div>
         </div>
-            <div class="card-footer text-center">
-              <a href="/cadastro/<%=pacote.id%>" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
-            </div>
-      </div>
     <% }) %>
   </div>
 </section>
@@ -138,15 +137,15 @@
           <h5 class="card-title"><%= pacote.nome %></h5>
           <p class="card-text">
             <%= pacote.descricao %>
-          </p>
-          <% if (pacote.aereo) { %>
-            <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" />
-          <% } %>
+            <% if (pacote.aereo) { %>
+              <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" /> 
+            <% } %>
+            <span class="card-link">R$ <%= pacote.preco %> / pessoa</span>
+          </div>
+              <div class="btn-danger btn textcolor text-center">
+                <a href="/cadastro/<%=pacote.id%>"> Ver Pacote! </a>
+              </div>
         </div>
-            <div class="card-footer text-center">
-              <a href="/cadastro/<%=pacote.id%>" class="card-link">R$ <%= pacote.preco %> / pessoa</a>
-            </div>
-      </div>
     <% }) %>
   </div>
 </section>
