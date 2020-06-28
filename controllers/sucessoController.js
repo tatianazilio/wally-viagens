@@ -4,9 +4,14 @@ const bcrypt = require("bcrypt");
 
 const sucessoController = {
 
-  create: (req, res) => res.render("auth/sucesso", { usuario:req.session.usuario }),
+  create: (req, res) => res.render("auth/sucesso", {usuario:req.session.usuario}),
 
   logar: async (req, res) => {
+
+    const {
+      email,
+      password
+    } = req.body;
 
     const con = new Sequelize(config);
 
