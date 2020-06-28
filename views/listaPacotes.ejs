@@ -2,19 +2,18 @@
 <html>
 <%- include('partials/head', {title:"Lista de pacotes"}) %>
 
-<body>
+<body id="lista-pacote">
     <div class="nav cover-container d-flex w-100 h-100 p-3 mx-auto flex-column nav-rosa">
         <%- include('partials/header') %>
     </div>
 
-    <main class="container mt-4">
-        <div class="d-flex justify-content-between">
-            <h2>Lista de Pacotes</h2>
+    <main class="jumbotron container col-8 mt-4 text-center">
+        <div class="">
+            <h1>Seus Pacotes!</h1>
         </div>
-        <table class="table mt-4">
+        <table class="table mt-5 mb-5">
             <thead>
                 <tr>
-                    <th scope="col">ID Pacote</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Ida</th>
                     <th scope="col">Volta</th>
@@ -24,7 +23,6 @@
             <tbody>
                 <% pacotes.forEach(pacote =>{ %>
                 <tr>
-                    <th scope="row"><%= pacote.id %></th>
                     <th> <%= pacote.nome %></th>
                     <th> <%= pacote.ida %></th>
                     <th> <%= pacote.volta %></th>
@@ -42,6 +40,7 @@
             </tbody>
         </table>
     </main>
+    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
@@ -51,7 +50,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-
+    
+<%- include('partials/footer') %>
 </body>
 
 </html>
