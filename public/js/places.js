@@ -19,14 +19,19 @@ function autocompletarDestino() {
 
 function pegarDestino() {
   let place = autocompleteDestino.getPlace();
+  console.log(place);
 
-  let cidade = place.address_components[0].long_name;
-  let pais = place.address_components[3].long_name;
+  let pais = place.address_components.find( (pais) => {
+    return pais.types[0] == "country";
+  }).long_name;
+
+  let cidade = place.address_components.find( (cidade) => {
+    return cidade.types[0] == "locality";
+  }).long_name;
 
   inputDestino.innerHTML = `
     <input name="destinoCidade" value="${cidade}" type="hidden"/>
     <input name="destinoPais" value="${pais}" type="hidden">`
-
 }
 
 function autocompletarOrigem() {
@@ -38,8 +43,13 @@ function autocompletarOrigem() {
 function pegarOrigem() {
   let place = autocompleteOrigem.getPlace();
 
-  let cidade = place.address_components[0].long_name;
-  let pais = place.address_components[3].long_name;
+  let pais = place.address_components.find( (pais) => {
+    return pais.types[0] == "country";
+  }).long_name;
+
+  let cidade = place.address_components.find( (cidade) => {
+    return cidade.types[0] == "locality";
+  }).long_name;
 
   inputOrigem.innerHTML = `
     <input name="origemCidade" value="${cidade}" type="hidden"/>
