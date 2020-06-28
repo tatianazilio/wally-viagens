@@ -18,7 +18,7 @@
 
 
         <!-- pedido quadro 1 - Resumo do pedido -->
-        <div class="card" style="width: 95%; background-color: rgb(199, 199, 199); margin: 32px;">
+        <div class="card container" style="background-color:#e9ecef; margin: 32px;">
 
 
             <div style="margin: 20px">
@@ -28,7 +28,7 @@
             </div>
 
             <div class="card mb-3"
-                style="width: 95%; display: flexbox; align-self: center; background-color: rgb(220, 220, 220);">
+                style="width: 95%; display: flexbox; align-self: center; background-color:white;">
                 <div class="row no-gutters">
                     <!-- imagem -->
                     <div id="foto-pedido" class="col-md-3" style="background-image: url('../../images/destaques-ex1-tahiti.jpg');">
@@ -36,27 +36,18 @@
                     </div>
 
                     <!-- resumo do pedido -->
+<<<<<<< HEAD
                     <div id+class="col-md-6">
                         <div style="height: 10%;">
                             <h5>Pacote</h5>
                         </div>
+=======
+                    <div class="col-md-6">
+                       
+>>>>>>> fa7c78b91b061947c84c5073d34f7a0ff4a67a3c
                         <div style="height: fit-content;">
-                            <h5>Bora Bora</h5>
-                            <p>Um verdadeiro paraíso tropical, com praias cristalinas, recifes de corais, areia
-                                branca e românticos bangalôs sobre a água.</p>
-                            <p>
-                                Quantidade de dias: 1.
-                            </p>
-                            <p>
-                                Alimentação: tudo incluso.
-                            </p>
-                            <p>
-                                Quartos Sinta-se em casa em um de nossos 394 quartos com ar-condicionado e TVs LCD. Sua
-                                cama Tempur-Pedic apresenta roupas de cama premium. O Wi-Fi de cortesia mantém você
-                                conectado e há programas a cabo para sua diversão. Banheiro privativo possui produtos de
-                                toalete de grife e secadores de cabelo.Comodidades Aproveite as instalações recreativas,
-                                que incluem quadras de tênis descobertas, uma piscina externa e uma academia. Este hotel...
-                            </p>
+                            <h5><%=pacote.nome%></h5>
+                            <p><%=pacote.descricao%></p>
                         </div>
 
 
@@ -68,7 +59,7 @@
                             <h5>Valor</h5>
                         </div>
                         <div style="height: 90%; display: flex;align-items: center; justify-content: center;">
-                            <p>R$500,00</p>
+                            <p>R$<%=pacote.preco%>,00</p>
                         </div>
 
                     </div>
@@ -97,7 +88,7 @@
 
             <div style="margin: 20px;">
                 <h3>
-                    Total: R$500,00
+                    Total: R$<%=pacote.preco%>,00
                 </h3>
             </div>
             <!-- fim do quadro de pedido -->
@@ -107,7 +98,7 @@
 
         </div>
 
-        <div class="card" style="width: 95%; background-color: rgb(199, 199, 199); margin: 0 32px 32px 32px;">
+        <div class="card container" style="width: 95%; background-color: #e9ecef; margin: 0 32px 32px 32px;">
 
             
 
@@ -187,28 +178,11 @@
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!-- Formas de Pagamento -->
 
 
 
-        <div class="card" style="width: 95%; background-color: rgb(199, 199, 199); margin: 0 32px 0 32px;">
+        <div class="card container" style="width: 95%; background-color: #e9ecef; margin: 0 32px 32px 32px;">
             <div style="margin: 20px;">
                 <h3>Forma de pagamento</h3>
             </div>
@@ -216,7 +190,7 @@
 
             <div class="accordion" id="accordionExample">
                 <div class="card">
-                    <div class="card-header" id="headingOne" style="background-color: rgb(219,219,219);">
+                    <div class="card-header" id="headingOne" style="background-color:white;">
                         <h2 class="mb-0">
                             <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                                 data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
@@ -236,7 +210,7 @@
                         </h2>
                     </div>
 
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body" style="display:flex;align-content: center;">
 
 
@@ -252,7 +226,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header" id="headingTwo" style="background-color: rgb(219,219,219)">
+                    <div class="card-header" id="headingTwo" style="background-color:white">
                         <h2 class="mb-0">
                             <button class="btn btn-link btn-block text-left collapsed" type="button"
                                 data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
@@ -331,7 +305,7 @@
                         </div>
                     </div>
                 </div>
-
+                <br>
             </div>
 
         </div>

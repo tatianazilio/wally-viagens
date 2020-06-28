@@ -6,7 +6,6 @@ let indexController = {
     index: async (req, res) => {
         try {
             const pacotes = await Pacote.findAll({ limit: 4 });
-
             const pacotesNacionais = await Pacote.findAll({
                 include: { 
                     model: Destino, through: DestinoPacote, as: 'destinos', where: {pais: 'Brasil'},
@@ -20,8 +19,9 @@ let indexController = {
                 },
                 limit: 4,
             });
+            console.log(req.session);
             
-        return res.render('index', { pacotes, pacotesNacionais, usuarioLogado:req.session.user, pacotesInternacionais});
+        return res.render('index', { pacotes, pacotesNacionais, pacotesInternacionais, usuario: req.session.usuario });
         } catch (error) {
             console.log(error);
             return res.render('error', {error});

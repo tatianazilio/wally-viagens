@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <header class="navbar">
     
+=======
+<header class="navbar container">
+
+>>>>>>> fa7c78b91b061947c84c5073d34f7a0ff4a67a3c
     <nav class="container-fluid navbar navbar-expand-lg navbar-dark">
 
         <a class="navbar-logo" href="/"><img src="/stylesheets/img/logoWally-White.png" alt="Wally" /></a>
@@ -13,41 +18,27 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="/cadastro">Anuncie sua viagem!</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Ajuda</a></li>
-                <li class="nav-item"><a id="botao-cadastrar" class="nav-link" href="/cadastrousuario">Cadastrar</a></li>
-                <li class="nav-item"><a id="botao-entrar" class="nav-link" href="/loginusuario">Entrar</a></li>
-                <li class="nav-item"><a id="usuario-logado" class="nav-link" href="/loginusuario">Usuário</a></li>
-               
+                <% if (usuario) { %>
+                    <li class="nav-item">
+                        <div class="dropdown nav-link">
+                            <p class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <%= usuario.email %>
+                            </p>
+                            <div class="dropdown-menu menu-user" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Sair</a>
+                            </div>
+                        </div>
+                    </li>
+                <% } else {%> 
+                    <li class="nav-item"><a id="botao-cadastrar" class="nav-link" href="/cadastrousuario">Cadastrar</a></li>
+                    <li class="nav-item"><a id="botao-entrar" class="nav-link" href="/loginusuario">Entrar</a></li>
+                <% } %>     
             </ul>
         </div>
-    </nav>
+    </nav>      
 </header>
 
 
-<script>
-    function loginHeader() {
-<<<<<<< HEAD
 
-    if(typeof usuarioLogado != "undefined") {
-        console.log("tem")
-    }else{
-        console.log(usuarioLogado)
-    }
-=======
-        
-    const usuario = typeof (usuarioLogado) != 'undefined' ? usuarioLogado : false
-    console.log(usuario)
-
-  if (!usuario) {
-    document.getElementById("botao-entrar").style.display = "none";
-    document.getElementById("botao-cadastrar").style.display = "none";
-    document.getElementById("usuario-logado").innerHTML = "opa";
-  }else {
-    document.getElementById("usuario-logado").style.display = "none"; 
-}
->>>>>>> 0fa28dcab9a5a00a444bab6b155bd52d248052ca
-}
-</script>
-    
-<script>loginHeader()</script>
 
 

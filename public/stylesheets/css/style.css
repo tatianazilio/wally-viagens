@@ -57,13 +57,18 @@ h6 {
   
 }
 
+.menu-user {
+  background: none;
+  font-size: smaller;
+}
+
 .lista-footer {
   margin-top: 60px;
   margin-bottom: 60px;
 }
 
 .lista-footer-horizontal {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .lista-footer-horizontal li {
@@ -210,7 +215,7 @@ h6 {
 }
 
 .btn-primary {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 0px;
   width: 100%;
   height: 45px;
@@ -279,6 +284,40 @@ h6 {
   background-color: rgba(0, 0, 0, 0.267);
 }
 
+#form-busca {
+  width: 800px;
+}
+
+::-webkit-input-placeholder {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
+  font-size: 15px;
+  color: grey;
+}
+
+#hospedes.custom-select {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
+  font-size: 15px;
+  color: grey;
+}
+
+#destino.form-control {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
+  font-size: 15px;
+  color: grey;
+}
+
+#checkin.form-control {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
+  font-size: 15px;
+  color: grey;
+}
+
+#checkout.form-control {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
+  font-size: 15px;
+  color: grey;
+}
+
 .destaques {
   color: gray;
 }
@@ -344,10 +383,10 @@ h6 {
 /* PAGAMENTO */
 
 #pagamento {
-  /* background-color: rgb(177, 177, 177);
-border-radius: 12px;
-padding: 2%;
-margin: 2%;*/
+background-image: url(../../images/planning2.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+
 display: flex;
 flex-wrap: wrap;
 align-items: center;
@@ -372,7 +411,7 @@ border-bottom-left-radius: 0;
 
 
 #pagamento .btn-block{
-background-color: rgb(219, 219, 219);
+background-color: white;
 display: flex;
 
 }
@@ -384,11 +423,16 @@ margin: 2px 0 0 10px;
 #pagamento #foto-pedido{
 background-size:cover ;
 background-position: center;
-
 }
+
+#pagamento .card{
+  border-width: 0;
+}
+
 #pagamento .accordion .card{
-background-color: rgb(220, 220, 220);
+background-color: #e9ecef;
 width: 100%;
+border-width: 1;
 }
 
 .imagem-resumo {
@@ -401,6 +445,10 @@ align-items: center;
 
 display: flexbox;
 justify-content: none;
+}
+
+.nfoi{
+  display: inline;
 }
 
 .quadro-externo {
@@ -462,12 +510,14 @@ display: flex;
 width: 100%;
 /* background-color: rgba(255, 255, 255, 0.37); */
 align-content: center;
+background-color: rgba(255, 255, 255, 0.205);
+margin-bottom: 5px;
+border-radius: 4px;
 }
 
 #erronewsletter{
 display: none;
 }
-
 
 @media screen and (max-width: 800px) {
 #pagamento .mb-3{

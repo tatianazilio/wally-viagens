@@ -1,10 +1,10 @@
 function auth(req, res, next) {
-  const usuario = typeof (req.session.user) != 'undefined' ? req.session.user : false
 
-  if (usuario) {
-    return next()
+  if (!req.session.usuario) {
+    req.session.previousUrl = req.originalUrl;
+    return res.redirect('/loginusuario');
   } else {
-    return res.redirect('/loginusuario')
+    return next();
   }
 }
 
