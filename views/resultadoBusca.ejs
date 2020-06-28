@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<%- include('partials/head', {title:"Wally"}) %>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" id="foto-principal">
+  <%- include('partials/header') %>
+
+  <!--FORMULÁRIO DE BUSCA-->
+  <main role="main" class="inner cover">
+    <div class="container d-flex justify-content-center col-9" id="caixa-de-busca">
+      <form id="form-busca">
+        <div class="form-row">
+          <div class="form-group col-md-9">
+            <label for="destino">Destino:</label>
+            <input type="text" class="form-control" id="destino" placeholder="Insira aqui seu destino..." />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="hospedes">Hóspedes:</label>
+            <select class="custom-select" id="hospedes" required>
+              <option selected disabled value="">Selecione...</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="checkin">Check-in:</label>
+            <input type="date" class="form-control" id="checkin" />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="checkout">Check-out:</label>
+            <input type="date" class="form-control" id="checkout" />
+          </div>
+        </div>
+        <div class="form-row justify-content-center">
+          <button type="submit" class="btn btn-primary col-4">Buscar</button>
+        </div>
+        <!--AGENTE DE VIAGENS-->
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agente-de-viagens">
+          Agente de Viagens
+        </button>
+        <div class="modal fade" id="agente-de-viagens" tabindex="-1" role="dialog"
+          aria-labelledby="agente-de-viagensCenterTitle" aria-hidden="true">
+          <div id="agente-de-viagens" class="modal-dialog modal-dialog-centered" role="document">
+            <div id="agente-de-viagens" class="modal-content">
+              <div id="agente-de-viagens" class="modal-header">
+                <a class="navbar-logo" href="#"><img src="/stylesheets/img/logoWally-Black.png" alt="Wally"></a>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Quer viajar pelo BRASIL ou pelo MUNDO?</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                  </div>
+                </form>
+                <div>
+                  <img src="/stylesheets/img/Agente-Wally1.png" alt="Wally">
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+      </form>
+    </div>
+  </main>
+</div>
+
+<!--RESULTADO BUSCA-->
+<section class="container destaques mt-5 mb-5">
+    <h3>Resultado da busca</h3>
+    <h5>Esse é o pacote perfeito para você!</h5>
+    <div id="resultado-busca" class="row justify-content-around">
+      <% pacotes.forEach((pacote) => { %>
+        <div id="card-resultado-busca" class="card" style="width: 15rem;">
+            <div class="row">
+                <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top col-3" alt="Tahiti" />
+                <div class="col-6 pt-3 pb-3">
+                    <h5 class="card-title"><%= pacote.nome %></h5>
+                    <p class="card-text">
+                        <%= pacote.descricao %>
+                      </p>
+                    </div>
+                    <div class="col-3 pt-3 pb-3 text-center">
+                        <% if (pacote.aereo) { %>
+                            <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" /> 
+                            <span class="card-link">R$ <%= pacote.preco %> / pessoa</span>
+                          <% } %>
+                    </div>
+        </div>
+        <div id="botao-busca" class="btn btn-danger textcolor text-center">
+            <a href="/cadastro/<%=pacote.id%>"> Ver Pacote </a>
+              </div>
+        
+      <% }) %>
+    </div>
+  </section>
+
+<%- include('partials/footer') %>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="js/app.js"></script>
+
+
+</html>
+
+
+

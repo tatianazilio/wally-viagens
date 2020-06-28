@@ -47,7 +47,6 @@ h6 {
   padding: 0px;
   justify-content: left;
   
-  
 }
 
 .navbar-nav .nav-item .nav-link {
@@ -228,10 +227,28 @@ h6 {
   background-color: rgb(255, 87, 90);
 }
 
+#botao-busca.btn.btn-danger.textcolor.text-center.col-2 {
+
+  background-color: #f95f62ff;
+  border-style: none;
+}
+
 #sucesso {
   margin: auto;
   border-bottom: none;
   max-height: 50%;
+}
+
+/* RESULTADO BUSCA */
+
+#resultado-busca.row.justify-content-around {
+margin-top: 2rem;
+}
+
+#card-resultado-busca {
+  width: 100%!important;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 /* AGENTE DE VIAGENS */
@@ -407,8 +424,6 @@ border-top-left-radius: 0;
 border-bottom-left-radius: 0;
 
 }
-
-
 
 #pagamento .btn-block{
 background-color: white;

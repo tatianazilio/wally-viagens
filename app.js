@@ -14,6 +14,7 @@ const usuarioRoute = require("./routes/usuarioRoute");
 const loginRoute = require("./routes/loginRoute");
 const sucessoRoute = require("./routes/sucessoRoute");
 const newsletterRouter = require("./routes/newsletterRoute");
+const resultadoBuscaRouter = require("./routes/resultadoBuscaRoute");
 
 const app = express();
 
@@ -49,6 +50,7 @@ app.use(usuarioRoute);
 app.use(loginRoute);
 app.use("/usuariosucesso", sucessoRoute);
 app.use("/newsletter", newsletterRouter);
+app.use("/resultadobusca", resultadoBuscaRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
