@@ -19,12 +19,11 @@ let indexController = {
                 },
                 limit: 4,
             });
-            console.log(req.session);
             
         return res.render('index', { pacotes, pacotesNacionais, pacotesInternacionais, usuario: req.session.usuario });
         } catch (error) {
             console.log(error);
-            return res.render('error', {error});
+            return res.render('error', {error, usuario:req.session.usuario});
         }
     }
 }

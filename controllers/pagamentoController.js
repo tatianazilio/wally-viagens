@@ -10,12 +10,10 @@ const pagamentoController = {
     view: async (req, res) => {
         try {
             let pacote = await Pacote.findByPk(req.params.id);
-            console.log(pacote);
             
             return res.render('pagamento', { pacote, usuario:req.session.usuario });
         } catch (error) {
-            console.log(error);
-            return res.render('error', {error});
+            return res.render('error', {error, usuario:req.session.usuario});
         }
     }
 

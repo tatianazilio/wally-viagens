@@ -13,7 +13,7 @@ const moment = require('moment');
 require('dotenv').config();
 
 let cadastroController = {
-    index: async (_req, res) => {
+    index: async (req, res) => {
         try {
             let pacotes = await Pacote.findAll({
                 attributes: ['id', 'nome', 'dataDePartida', 'dataDeChegada']
@@ -26,7 +26,7 @@ let cadastroController = {
             return res.render('listaPacotes', { pacotes, usuario:req.session.usuario });
         } catch (error) {
             console.log(error);
-            return res.render('error', {error});
+            return res.render('error', {error, usuario:req.session.usuario });
         }
     },
 
@@ -40,7 +40,7 @@ let cadastroController = {
             
         } catch (error) {
             console.log(error);
-            return res.render('error', {error});
+            return res.render('error', {error, usuario:req.session.usuario});
         }
     },
 
@@ -50,7 +50,7 @@ let cadastroController = {
             return res.render('cadastroPacote', {usuario:req.session.usuario, API_KEY});
         } catch (error) {
             console.log(error);
-            return res.render('error', {error});
+            return res.render('error', {error, usuario:req.session.usuario});
         }
     },
 
@@ -94,11 +94,11 @@ let cadastroController = {
                 ]
             });
         
-            return res.redirect("/cadastro/lista", {usuario:req.session.usuario});
+            return res.redirect("/cadastro/lista");
 
         } catch (error) {
             console.log(error);
-            return res.render('error', {error});
+            return res.render('error', {error, usuario:req.session.usuario});
         }
     },
     
@@ -110,7 +110,7 @@ let cadastroController = {
             return res.redirect("/cadastro/lista");
         } catch (error) {
             console.log(error);
-            return res.render('error', {error});
+            return res.render('error', {error, usuario:req.session.usuario});
         }
     },
 
@@ -175,7 +175,7 @@ let cadastroController = {
 
         } catch (error) {
             console.log(error);
-            return res.render('error', {error});
+            return res.render('error', {error, usuario:req.session.usuario});
         }
     },
 
