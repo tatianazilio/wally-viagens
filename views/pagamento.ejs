@@ -45,122 +45,120 @@
                             <p><%=pacote.descricao%></p>
                         </div>
 
-                            <div style="height: fit-content;">
-                                <h5><%=pacote.nome%></h5>
-                                <br>
-                                <p><%=pacote.descricao%></p>
-                            </div>
-
-
-                        </div>
-
-                        <!-- valor -->
-                        <div class="col-md-4">
-                            <div style="height: 10%;">
-                                <h5>Valor</h5>
-                            </div>
-                            <div style="height: 90%; display: flex;align-items: center; justify-content: center;">
-                                <p>R$<%=pacote.preco%>,00</p>
-                            </div>
-
+                        <div style="height: fit-content;">
+                            <h5><%=pacote.nome%></h5>
+                            <br>
+                            <p><%=pacote.descricao%></p>
                         </div>
 
                     </div>
+
+                    <!-- valor -->
+                    <div class="col-md-4">
+                        <div style="height: 10%;">
+                            <h5>Valor</h5>
+                        </div>
+                        <div style="height: 90%; display: flex;align-items: center; justify-content: center;">
+                            <p>R$<%=pacote.preco%>,00</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+       
+
+        <div style="margin: 20px;">
+            <h3>
+                Total: R$<%=pacote.preco%>,00
+            </h3>
+        </div>
+        <!-- fim do quadro de pedido -->
+
+
+
+
+    </div>
+
+    <div class="card container" style="width: 95%; background-color: #e9ecef; margin: 0 32px 32px 32px;">
+
+
+
+        <div style="margin: 20px;">
+            <h3>Dados do pagante</h3>
+        </div>
+
+        <form>
+            <div class="d-flex flex-wrap">
+
+                <div class="form-group col-sm-9">
+                    <label for="nomeCompleto">Nome Completo</label>
+                    <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" required="required"
+                        placeholder="Nome Completo">
                 </div>
 
-            </div>
+                <div class="form-group col-sm-3">
+                    <label for="dataDeNascimento">Data de nascimento</label>
+                    <input type="date" class="form-control" id="dataDeNascimento" name="dataDeNascimento"
+                        required="required">
+                </div>
 
-            <div style="margin: 20px;">
-                <h3>
-                    Total: R$<%=pacote.preco%>,00
-                </h3>
-            </div>
-            <!-- fim do quadro de pedido -->
+                <div class="form-group col-sm-4">
+                    <label for="CPF">CPF</label>
+                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" required="required">
+                </div>
 
+                <div class="form-group col-sm-4">
+                    <label for="genero">Sexo</label>
+                    <select class="custom-select" id="genero" required>
+                        <option selected disabled value="">Selecione...</option>
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                    </select>
+                </div>
 
+                <div class="form-group col-sm-4">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone"
+                        required="required">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço"
+                        size="50" required="required">
+                </div>
+                <div class="form-group col-sm-3">
+                    <label for="numero">Número</label>
+                    <input type="text" class="form-control" id="numero" name="numero" placeholder="Número" size="10"
+                        required="required">
+                </div>
+                <div class="form-group col-sm-3">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" class="form-control" id="complemento" name="complemento"
+                        placeholder="Complemento" size="10" required="required">
+                </div>
 
+                <div class="form-group col-sm-4">
+                    <label for="estado">Estado</label>
+                    <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado" size="20"
+                        required="required">
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" size="20"
+                        required="required">
+                </div>
 
-        </div>
+                <div class="form-group col-sm-4">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" size="20"
+                        required="required">
+                </div>
 
-        <div class="card container" style="width: 95%; background-color: #e9ecef; margin: 0 32px 32px 32px;">
+        </form>
 
-
-
-            <div style="margin: 20px;">
-                <h3>Dados do pagante</h3>
-            </div>
-
-            <form>
-                <div class="d-flex flex-wrap">
-
-                    <div class="form-group col-sm-9">
-                        <label for="nomeCompleto">Nome Completo</label>
-                        <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto"
-                            required="required" placeholder="Nome Completo">
-                    </div>
-
-                    <div class="form-group col-sm-3">
-                        <label for="dataDeNascimento">Data de nascimento</label>
-                        <input type="date" class="form-control" id="dataDeNascimento" name="dataDeNascimento"
-                            required="required">
-                    </div>
-
-                    <div class="form-group col-sm-4">
-                        <label for="CPF">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF"
-                            required="required">
-                    </div>
-
-                    <div class="form-group col-sm-4">
-                        <label for="genero">Sexo</label>
-                        <select class="custom-select" id="genero" required>
-                            <option selected disabled value="">Selecione...</option>
-                            <option>Masculino</option>
-                            <option>Feminino</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group col-sm-4">
-                        <label for="telefone">Telefone</label>
-                        <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone"
-                            required="required">
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <label for="endereco">Endereço</label>
-                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço"
-                            size="50" required="required">
-                    </div>
-                    <div class="form-group col-sm-3">
-                        <label for="numero">Número</label>
-                        <input type="text" class="form-control" id="numero" name="numero" placeholder="Número" size="10"
-                            required="required">
-                    </div>
-                    <div class="form-group col-sm-3">
-                        <label for="complemento">Complemento</label>
-                        <input type="text" class="form-control" id="complemento" name="complemento"
-                            placeholder="Complemento" size="10" required="required">
-                    </div>
-
-                    <div class="form-group col-sm-4">
-                        <label for="estado">Estado</label>
-                        <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado" size="20"
-                            required="required">
-                    </div>
-                    <div class="form-group col-sm-4">
-                        <label for="cidade">Cidade</label>
-                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" size="20"
-                            required="required">
-                    </div>
-
-                    <div class="form-group col-sm-4">
-                        <label for="bairro">Bairro</label>
-                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" size="20"
-                            required="required">
-                    </div>
-
-            </form>
-
-        </div>
+    </div>
     </div>
 
 
