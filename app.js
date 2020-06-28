@@ -47,7 +47,7 @@ app.use("/pagamento", pagamentoRoute);
 app.use("/cadastro", cadastroRouter);
 app.use(usuarioRoute);
 app.use(loginRoute);
-app.use("/sucesso", sucessoRoute);
+app.use("/usuariosucesso", sucessoRoute);
 app.use("/newsletter", newsletterRouter);
 
 // catch 404 and forward to error handler

@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const sucessoController = require("../controllers/sucessoController")
 
-/* GET destino. */
-router.get('/', (req, res) => {
-  res.render('auth/sucesso');
-});
+router.get("/", sucessoController.create);
+router.post("/", sucessoController.logar);
 
 module.exports = router;
