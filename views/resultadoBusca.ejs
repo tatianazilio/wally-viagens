@@ -43,31 +43,6 @@
         <div class="form-row justify-content-center">
           <button type="submit" class="btn btn-primary col-4">Buscar</button>
         </div>
-        <!--AGENTE DE VIAGENS-->
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agente-de-viagens">
-          Agente de Viagens
-        </button>
-        <div class="modal fade" id="agente-de-viagens" tabindex="-1" role="dialog"
-          aria-labelledby="agente-de-viagensCenterTitle" aria-hidden="true">
-          <div id="agente-de-viagens" class="modal-dialog modal-dialog-centered" role="document">
-            <div id="agente-de-viagens" class="modal-content">
-              <div id="agente-de-viagens" class="modal-header">
-                <a class="navbar-logo" href="#"><img src="/stylesheets/img/logoWally-Black.png" alt="Wally"></a>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Quer viajar pelo BRASIL ou pelo MUNDO?</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                  </div>
-                </form>
-                <div>
-                  <img src="/stylesheets/img/Agente-Wally1.png" alt="Wally">
-                </div>
-              </div>
-            </div>
-          </div> -->
-
       </form>
     </div>
   </main>
@@ -78,7 +53,7 @@
     <h3>Resultado da busca</h3>
     <h5>Esse é o pacote perfeito para você!</h5>
     <div id="resultado-busca" class="row justify-content-around">
-      <% pacotes.forEach((pacote) => { %>
+      <% busca.forEach((pacote) => { %>
         <div id="card-resultado-busca" class="card" style="width: 15rem;">
             <div class="row">
                 <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top col-3" alt="Tahiti" />
@@ -99,8 +74,8 @@
             <a href="/cadastro/<%=pacote.id%>"> Ver Pacote </a>
               </div>
         
-      <% }) %>
-    </div>
+            </div>
+            <% }) %>
   </section>
 
 <%- include('partials/footer') %>

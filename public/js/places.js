@@ -30,8 +30,8 @@ function pegarDestino() {
   }).long_name;
 
   inputDestino.innerHTML = `
-    <input name="destinoCidade" value="${cidade}" type="hidden"/>
-    <input name="destinoPais" value="${pais}" type="hidden">`
+    <input name="cidade" value="${cidade}" type="hidden"/>
+    <input name="pais" value="${pais}" type="hidden">`
 }
 
 function autocompletarOrigem() {

@@ -29,6 +29,32 @@ let indexController = {
             const usuario = (req.session.usuario) ? req.session.usuario : false;
             return res.render('error', { error, usuario });
         }
+    },
+    search: async (req, res) => {
+        let { cidade, pais, ida, volta } = req.query;
+        console.log(cidade, pais, ida, volta);
+        
+        try {
+            let busca = await Pacote.findAll({
+                where: {
+                    '$destinos.pais$': { [Op.eq]: pais},
+                    '$destinos.cidade$': { [Op.eq]: cidade},
+                },
+                include: { 
+                    model: Destino, 
+                    through: DestinoPacote,
+                    as: 'destinos',
+                }
+            });
+            console.log(busca);
+            
+
+            return res.render('resultadoBusca', { busca, usuario:req.session.usuario });
+
+        } catch (error) {
+            return res.render('error', { error });
+        }
+
     }
 }
 

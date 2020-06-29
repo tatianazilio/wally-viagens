@@ -25,8 +25,7 @@ let cadastroController = {
             });
             return res.render('listaPacotes', { pacotes, usuario:req.session.usuario });
         } catch (error) {
-            console.log(error);
-            return res.render('error', {error, usuario:req.session.usuario });
+            return res.render('error', { error });
         }
     },
 
@@ -62,8 +61,8 @@ let cadastroController = {
             diarias, 
             preco, 
             descricao, 
-            destinoPais, 
-            destinoCidade, 
+            pais, 
+            cidade, 
             origemCidade, 
             origemPais, 
             ambiente, 
@@ -81,7 +80,7 @@ let cadastroController = {
             preco,
             descricao,
             imagem: imagem.filename,
-            destinos: [{pais: destinoPais, cidade: destinoCidade}],
+            destinos: [{pais: pais, cidade: cidade}],
             origens: [{pais: origemPais, cidade: origemCidade}],
             ambientes: [{nome: ambiente}],
             atracoes: [{nome: atracao}]
