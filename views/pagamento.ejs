@@ -7,7 +7,7 @@
 <body>
 
     <!-- header  -->
-    <div class="cover-container d-flex w-100 h-30 p-3 mx-auto flex-column" id="foto-principal">
+    <div class="cover-container d-flex w-100 h-30 p-3 mx-auto flex-column nav-rosa">
 
         <%- include('./partials/header') %>
     </div>
@@ -19,13 +19,34 @@
 
         <!-- pedido quadro 1 - Resumo do pedido -->
         <div class="card container" style="background-color:#e9ecef; margin: 32px;">
-
-
             <div style="margin: 20px">
                 <h3>
                     Resumo do Pedido
                 </h3>
             </div>
+
+            <section class="container destaques">
+                <div  class="row justify-content-around">
+                    <div id="card-resultado-busca" class="card" style="width: 15rem;">
+                        <div class="row">
+                            <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top col-3" alt="Tahiti" />
+                            <div class="col-6 pt-3 pb-3">
+                                <h5 class="card-title"><%= pacote.nome %></h5>
+                                <p class="card-text">
+                                    <%= pacote.descricao %>
+                                  </p>
+                                </div>
+                                <div class="col-3 pt-3 pb-3 text-center">
+                                        <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" /> 
+                                        <span class="card-link">...Passagem aérea incluída!</span>
+                                </div>
+                    </div>
+                </div>
+              </section>
+
+
+
+
             <!-- cada pedido -->
             <div class="card mb-4" style="width: 95%; display: flexbox; align-self: center; background-color:white;">
                 <div class="row no-gutters">
@@ -34,45 +55,15 @@
                         style="background-image: url('../../images/destaques-ex1-tahiti.jpg');">
                         <!-- <img src="../../images/destaques-ex1-tahiti.jpg" class="img-fluid" alt="Tahiti"> -->
                     </div>
-
-                    <!-- resumo do pedido -->
-                    <div id+class="col-md-6">
-                        <div style="height: 10%;">
-                            <h5>Pacote</h5>
-                        </div>
-                        <div style="height: fit-content;">
-                            <h5><%=pacote.nome%></h5>
-                            <p><%=pacote.descricao%></p>
-                        </div>
-
-                        <div style="height: fit-content;">
-                            <h5><%=pacote.nome%></h5>
-                            <br>
-                            <p><%=pacote.descricao%></p>
-                        </div>
-
-                    </div>
-
-                    <!-- valor -->
-                    <div class="col-md-4">
-                        <div style="height: 10%;">
-                            <h5>Valor</h5>
-                        </div>
-                        <div style="height: 90%; display: flex;align-items: center; justify-content: center;">
-                            <p>R$<%=pacote.preco%>,00</p>
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
 
        
 
-        <div style="margin: 20px;">
-            <h3>
+        <div style="margin: 20px">
+            <button type="button" class="btn btn-secondary tex-center">
                 Total: R$<%=pacote.preco%>,00
-            </h3>
+            </button>
         </div>
         <!-- fim do quadro de pedido -->
 

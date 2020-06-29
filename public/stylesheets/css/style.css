@@ -8,6 +8,15 @@ a {
   color: #00b7ff;
 }
 
+a:hover {
+  color: #00b7ff;
+  text-decoration: none;
+}
+
+p.card-text {
+margin-left: 10px;
+}
+
 h4 {
   font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
   font-size: 12px;
@@ -221,13 +230,16 @@ h6 {
   margin-bottom: 0px;
   width: 100%;
   height: 45px;
-  border-radius: 8px;
+  border-radius: 3px;
   background-color: #f95f62ff;
   border-style: none;
+  text-decoration: none;
+  vertical-align: middle;
 }
 
 .btn-primary:hover {
-  background-color: rgb(255, 87, 90);
+  background-color: rgb(255, 143, 144);
+  text-decoration: none;
 }
 
 #botao-busca.btn.btn-danger.textcolor.text-center.col-2 {
