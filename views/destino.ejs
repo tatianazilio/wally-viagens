@@ -25,13 +25,15 @@
             <div class="col-8">
                 <h6><%= pacote.descricao %></h6>
             </div>
-            <div class="col-4">
-                <div class="d-flex justify-content-center mt-5">
+            <div class="col-4" id="pessoa">
+                <div id="left" class="d-flex justify-content-left  mt-5" >
                     <h2>R$ <%= pacote.preco %></h2><span><p> /pessoa</p></span>
                 </div>
                 <div class="d-flex justify-content-end mt-5">
-                    <button type="button" class="btn comprar" onclick="location.href='/pagamento/<%=pacote.id%>'">Comprar</button>
+                    <button type="button" id="comprar1" class="btn comprar" onclick="location.href='/pagamento/<%=pacote.id%>'">Comprar</button>
+                    
                 </div>
+
             </div>
         </div>
     </section>

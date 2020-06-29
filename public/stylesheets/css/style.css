@@ -36,6 +36,8 @@ h6 {
 
 /* BOOTSTRAP */
 
+
+
 .btn-link {
   font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
   font-size: 14px;
@@ -421,10 +423,21 @@ margin-top: 2rem;
 .comprar {
   background-color: #f95f62ff;
   color: white;
-  border: none;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px  #9c9797;
+  position: absolute;
+  left: -950px;  
+  top: 100px;  
 }
 
 /* PAGAMENTO */
+
+#left{
+  position: relative;
+  left: -960px;  
+  top: 100px;
+
+}
 
 #pagamento {
 background-image: url(../../images/planning2.jpg);
@@ -436,6 +449,7 @@ flex-wrap: wrap;
 align-items: center;
 justify-content: center; 
 font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
+
 
 }
 #pagamento .btn-secondary{
