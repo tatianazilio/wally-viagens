@@ -36,8 +36,6 @@ h6 {
 
 /* BOOTSTRAP */
 
-
-
 .btn-link {
   font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
   font-size: 14px;
@@ -57,6 +55,35 @@ h6 {
 }
 
 /* HEADER E FOOTER */
+
+.dropdown-menu.menu-user.show {
+  min-width: 140px !important;
+  background-color:  #f95f62ff;
+  border-color: #f95f62ff;
+}
+
+.dropdown-item {
+  font-family: "Lucida Grande","Open Sans", Helvetica, sans-serif, Arial;
+  font-size: 13px;
+  text-align: center;
+  color: white;
+}
+
+.dropdown.nav-link {
+  height: 33px;
+}
+
+#dropdownMenuLink.dropdown-toggle {
+  display: flex!important;             
+  align-items: center!important;     
+  justify-content: center!important; 
+}
+
+.nav-item{
+  display: flex!important;            
+  align-items: center!important;       
+  justify-content: center!important; 
+}
 
 .navbar {
   padding: 0px;
@@ -450,7 +477,6 @@ align-items: center;
 justify-content: center; 
 font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial;
 
-
 }
 #pagamento .btn-secondary{
 display: flex;
@@ -589,4 +615,16 @@ display: none;
   border-bottom-left-radius: 4px;
 
 }
+
+.dropdown.nav-link {
+  height: auto;
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-family: "Lucida Grande","Open Sans", Helvetica, sans-serif, Arial;
+  padding-left: 0px;
+  color: white;
+  
+}
+
 }
