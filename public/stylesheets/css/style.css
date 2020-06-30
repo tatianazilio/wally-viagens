@@ -34,6 +34,18 @@ h6 {
   margin-left: 10px;
 }
 
+#data-de-partida {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif, Arial;
+  font-size: 15px;
+  color: grey;
+}
+
+#data-de-chegada {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif, Arial;
+  font-size: 15px;
+  color: grey;
+}
+
 /* BOOTSTRAP */
 
 .btn-link {
@@ -287,6 +299,12 @@ h6 {
 
 #listapacotes {
   min-height: 600px;
+}
+
+#botao-card {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+
 }
 
 /* RESULTADO BUSCA */

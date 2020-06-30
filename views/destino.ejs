@@ -6,46 +6,51 @@
     <div class="nav cover-container d-flex w-100 h-100 p-3 mx-auto flex-column nav-rosa">
         <%- include('partials/header') %>
     </div>
-    
-    <img src="/images/uploads/<%= pacote.imagem %>" alt="" class="pacote-imagem img-fluid">
-    
+
+    <img src="/images/uploads/<%= pacote.imagem %>" alt="" class="pacote-imagem">
+
     <section class="m-5">
-        <div class="d-flex justify-content-start">
+        <div class="container d-flex justify-content-center">
             <% pacote.ambientes.forEach((ambiente) => { %>
-                <h3><span class="badge badge-secondary mr-1"><%= ambiente.nome%></span></h3>
+            <h3><span class="badge badge-secondary ml-1 mr-1"><%= ambiente.nome%></span></h3>
             <% }) %>
             <% pacote.atracoes.forEach((atracao) => { %>
-                <h3><span class="badge badge-secondary mr-1"><%= atracao.nome%></span></h3>
+            <h3><span class="badge badge-secondary ml-1 mr-1"><%= atracao.nome%></span></h3>
             <% }) %>
         </div>
-        <div class="titulo">
+        <div class="titulo container text-center mt-3">
             <h1><%= pacote.nome %></h1>
         </div>
-        <div class="row mb-5">
-            <div class="col-8">
-                <h6><%= pacote.descricao %></h6>
-            </div>
-            <div class="col-4" id="pessoa">
-                <div id="left" class="d-flex justify-content-left  mt-5" >
-                    <h2>R$ <%= pacote.preco %></h2><span><p> /pessoa</p></span>
-                </div>
-                <div class="d-flex justify-content-end mt-5">
-                    <button type="button" id="comprar1" class="btn comprar" onclick="location.href='/pagamento/<%=pacote.id%>'">Comprar</button>
-                    
-                </div>
-
+        <div class="container mt-5">
+            <div class="row text-center">
+                <h6 class="col-4"><%= pacote.descricao %></h6>
+                <h6 class="col-4"><%= pacote.descricao %></h6>
+                <h6 class="col-4"><%= pacote.descricao %></h6>
             </div>
         </div>
+        <div class="container d-flex justify-content-center mt-5">
+            <h2>R$ <%= pacote.preco %></h2>
+                <p class="ml-1 mt-3">/pessoa</p>
+        </div>
+        <div class="container text-center">
+            <button type="button" id="comprar1" class="btn btn-primary col-2"
+                onclick="location.href='/pagamento/<%=pacote.id%>'">Comprar</button>
+        </div>
+        </div>
+        </div>
     </section>
-    
-<%- include('partials/footer') %>
+
+    <%- include('partials/footer') %>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
 
 </html>

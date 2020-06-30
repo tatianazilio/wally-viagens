@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="form-row justify-content-center">
-          <button type="submit" class="btn btn-primary col-4">Buscar</button>
+          <button id="botao-caixa-busca" type="submit" class="btn btn-primary col-4">Buscar</button>
         </div>
       </form>
     </div>
@@ -62,15 +62,18 @@
         <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top" alt="Tahiti" />
         <div class="card-body">
           <h5 class="card-title"><%= pacote.nome %></h5>
-          <p class="card-text">
-            <%= pacote.descricao %>
-          </p>
-          <% if (pacote.aereo) { %>
+          <div class="card-text">
+            <div class="row container-fluid mb-2">
+              <h6><span class="badge badge-secondary">Urbano</span></h6>
+              <h6><span class="badge badge-secondary ml-1">Vida noturna</span></h6>
+            </div>
+          </div>
+              <% if (pacote.aereo) { %>
             <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" /> 
           <% } %>
-          <span class="card-link">R$ <%= pacote.preco %> / pessoa</span>
+          <span class="card-link">R$<%= pacote.preco %> / pessoa</span>
         </div>
-        <a class="btn btn-primary textcolor text-center" href="/cadastro/<%=pacote.id%>"> Ver Pacote! </a>
+        <a id="botao-card" class="btn btn-primary textcolor text-center" href="/cadastro/<%=pacote.id%>"> Ver Pacote! </a>
       </div>
     <% }) %>
   </div>
@@ -86,13 +89,18 @@
         <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top" alt="Tahiti" />
         <div class="card-body">
           <h5 class="card-title"><%= pacote.nome %></h5>
-          <p class="card-text">
+          <div class="card-text">
+            <div class="row container-fluid mb-2">
+              <h6><span class="badge badge-secondary">Urbano</span></h6>
+              <h6><span class="badge badge-secondary ml-1">Vida noturna</span></h6>
+            </div>
+          </div>
             <% if (pacote.aereo) { %>
               <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" /> 
             <% } %>
-            <span class="card-link">R$ <%= pacote.preco %> / pessoa</span>
+            <span class="card-link">R$<%= pacote.preco %> / pessoa</span>
           </div>
-          <a class="btn btn-primary textcolor text-center" href="/cadastro/<%=pacote.id%>"> Ver Pacote! </a>
+          <a id="botao-card" class="btn btn-primary textcolor text-center" href="/cadastro/<%=pacote.id%>"> Ver Pacote! </a>
         </div>
     <% }) %>
   </div>
@@ -110,14 +118,18 @@
         <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top" alt="<%= pacote.nome %>" />
         <div class="card-body">
           <h5 class="card-title"><%= pacote.nome %></h5>
-          <p class="card-text">
-            <%= pacote.descricao %>
+          <div class="card-text">
+            <div class="row container-fluid mb-2">
+              <h6><span class="badge badge-secondary">Urbano</span></h6>
+              <h6><span class="badge badge-secondary ml-1">Vida noturna</span></h6>
+            </div>
+          </div>
             <% if (pacote.aereo) { %>
               <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" /> 
             <% } %>
-            <span class="card-link">R$ <%= pacote.preco %> / pessoa</span>
+            <span class="card-link">R$<%= pacote.preco %> / pessoa</span>
           </div>
-                <a class="btn btn-primary textcolor text-center" href="/cadastro/<%=pacote.id%>"> Ver Pacote! </a>
+                <a id="botao-card" class="btn btn-primary textcolor text-center" href="/cadastro/<%=pacote.id%>"> Ver Pacote! </a>
         </div>
     <% }) %>
   </div>
