@@ -29,7 +29,7 @@ let indexController = {
             const pacotesInternacionais = await Pacote.findAll({
                 include: [{ 
                     model: Destino, through: DestinoPacote, as: 'destinos', where: {pais: {[Op.not]: 'Brasil'}},
-                },{
+                }, {
                     model: Ambiente, through: AmbientePacote, as: 'ambientes'
                 }, {
                     model: Atracao, through: AtracaoPacote, as: 'atracoes'
