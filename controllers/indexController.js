@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Pacote, Destino, DestinoPacote } = require("../models");
+const { Pacote, Destino, DestinoPacote, Ambiente, AmbientePacote, Atracao, AtracaoPacote } = require("../models");
 const { Op } = require("sequelize");
 
 
@@ -9,18 +9,31 @@ let indexController = {
         const API_KEY = process.env.API_KEY;
         const usuario = (req.session.usuario) ? req.session.usuario : false;
         try {
-            const pacotes = await Pacote.findAll({ limit: 4 });
+            const pacotes = await Pacote.findAll({
+                include: [{ all: true }],
+                limit: 4 
+            });
+
+            
             const pacotesNacionais = await Pacote.findAll({
-                include: { 
+                include: [{ 
                     model: Destino, through: DestinoPacote, as: 'destinos', where: {pais: 'Brasil'},
-                },
+                }, {
+                    model: Ambiente, through: AmbientePacote, as: 'ambientes'
+                }, {
+                    model: Atracao, through: AtracaoPacote, as: 'atracoes'
+                }],
                 limit: 4,
              });
             
             const pacotesInternacionais = await Pacote.findAll({
-                include: { 
+                include: [{ 
                     model: Destino, through: DestinoPacote, as: 'destinos', where: {pais: {[Op.not]: 'Brasil'}},
-                },
+                },{
+                    model: Ambiente, through: AmbientePacote, as: 'ambientes'
+                }, {
+                    model: Atracao, through: AtracaoPacote, as: 'atracoes'
+                }],
                 limit: 4,
             });
             

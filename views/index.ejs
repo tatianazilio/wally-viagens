@@ -64,8 +64,12 @@
           <h5 class="card-title"><%= pacote.nome %></h5>
           <div class="card-text">
             <div class="row container-fluid mb-2">
-              <h6><span class="badge badge-secondary">Urbano</span></h6>
-              <h6><span class="badge badge-secondary ml-1">Vida noturna</span></h6>
+              <% pacote.ambientes.forEach((ambiente) => { %>
+                <h6><span class="badge badge-secondary"><%= ambiente.nome%></span></h6>
+              <% }) %>
+              <% pacote.atracoes.forEach((atracao) => { %>
+                <h6><span class="badge badge-secondary ml-1"><%= atracao.nome%></span></h6>
+              <% }) %>
             </div>
           </div>
               <% if (pacote.aereo) { %>
@@ -91,8 +95,12 @@
           <h5 class="card-title"><%= pacote.nome %></h5>
           <div class="card-text">
             <div class="row container-fluid mb-2">
-              <h6><span class="badge badge-secondary">Urbano</span></h6>
-              <h6><span class="badge badge-secondary ml-1">Vida noturna</span></h6>
+              <% pacote.ambientes.forEach((ambiente) => { %>
+                <h6><span class="badge badge-secondary"><%= ambiente.nome%></span></h6>
+              <% }) %>
+              <% pacote.atracoes.forEach((atracao) => { %>
+                <h6><span class="badge badge-secondary ml-1"><%= atracao.nome%></span></h6>
+              <% }) %>
             </div>
           </div>
             <% if (pacote.aereo) { %>
@@ -120,8 +128,12 @@
           <h5 class="card-title"><%= pacote.nome %></h5>
           <div class="card-text">
             <div class="row container-fluid mb-2">
-              <h6><span class="badge badge-secondary">Urbano</span></h6>
-              <h6><span class="badge badge-secondary ml-1">Vida noturna</span></h6>
+              <% pacote.ambientes.forEach((ambiente) => { %>
+                <h6><span class="badge badge-secondary"><%= ambiente.nome%></span></h6>
+              <% }) %>
+              <% pacote.atracoes.forEach((atracao) => { %>
+                <h6><span class="badge badge-secondary ml-1"><%= atracao.nome%></span></h6>
+              <% }) %>
             </div>
           </div>
             <% if (pacote.aereo) { %>
