@@ -18,7 +18,7 @@
 
 
         <!-- pedido quadro 1 - Resumo do pedido -->
-        <div class="card container" style="background-color:#e9ecef; margin: 32px;">
+        <div class="card container mt-5" style="background-color:#e9ecef; margin: 32px;">
             <div style="margin: 20px">
                 <h3>
                     Resumo do Pedido
@@ -30,16 +30,27 @@
                     <div id="card-resultado-busca" class="card" style="width: 15rem;">
                         <div class="row">
                             <img src="/images/uploads/<%=pacote.imagem%>" class="card-img-top col-3" alt="Tahiti" />
-                            <div class="col-6 pt-3 pb-3">
-                                <h5 class="card-title"><%= pacote.nome %></h5>
-                                <p class="card-text">
+                            <div class="col-5 pt-3 pb-3">
+                                <h5 id="texto-titulo" class="card-title"><%= pacote.nome %></h5>
+                                <p id="texto-destino" class="card-text mt-2">
                                     <%= pacote.descricao %>
                                   </p>
                                 </div>
-                                <div class="col-3 pt-3 pb-3 text-center">
-                                        <img src="../../images/airplane.png" class="img-fluid rating" alt="rating" /> 
-                                        <span class="card-link">...Passagem aérea incluída!</span>
-                                </div>
+                        
+                                    <div class="col-4 pt-3 pb-">
+                                        <div class="text-center">
+                                            <h6 id="texto-destino" class=""><img src="../../images/airplane.png" class="img-fluid rating  mr-2" alt="rating"/>Passagens aéreas, de ida/volta</h6>
+                                        </div>
+                                        <div class="text-center">
+                                            <h6 id="texto-destino" class=""><img src="../../images/hotel.png" class="img-fluid rating  mr-2" alt="rating"/>Hotel, Hospedagens e Refeição</h6>
+                                        </div>
+                                        <div class="text-center">
+                                            <h6 id="texto-destino" class=""><img src="../../images/bus.png" class="img-fluid rating  mr-2" alt="rating"/>Transporte aos locais visitados</h6>
+                                        </div>
+                                        <div class="text-center">
+                                            <h6 id="texto-destino" class=""><img src="../../images/life.png" class="img-fluid rating  mr-2" alt="rating"/>Seguro de vida e contra roubos</h6>
+                                        </div>
+                                    </div>   
                     </div>
                 </div>
               </section>
@@ -59,11 +70,10 @@
             </div>
 
        
-
-        <div style="margin: 20px">
-            <button type="button" class="btn btn-secondary tex-center">
-                Total: R$<%=pacote.preco%>,00
-            </button>
+            <div class="mb-4" style="width: 100%; display: flex; justify-content: center;">
+                <div class="container d-flex justify-content-center mt-2">
+                    <h2>Total: R$ <%= pacote.preco %></h2>
+                </div>
         </div>
         <!-- fim do quadro de pedido -->
 
@@ -157,7 +167,7 @@
 
 
 
-    <div class="card container" style="width: 95%; background-color: #e9ecef; margin: 0 32px 32px 32px;">
+    <div class="card container mb-5" style="width: 95%; background-color: #e9ecef; margin: 0 32px 32px 32px;">
         <div style="margin: 20px;">
             <h3>Forma de pagamento</h3>
         </div>

@@ -23,9 +23,32 @@
         </div>
         <div class="container mt-5">
             <div class="row text-center">
-                <h6 class="col-4"><%= pacote.descricao %></h6>
-                <h6 class="col-4"><%= pacote.descricao %></h6>
-                <h6 class="col-4"><%= pacote.descricao %></h6>
+                <div class="col-4 border-right">
+                    <h6 class="mb-3 text-center font-weight-bold">Descrição</h6>
+                    <h6 id="texto-destino" class="text-justify"><%= pacote.descricao %></h6>
+                </div>
+              
+                <div class="col-4 border-right">
+                    <h6 class="mb-3 text-center font-weight-bold ">Serviços Inclusos</h6>
+                    <div class="text-center">
+                        <h6 id="texto-destino" class=""><img src="../../images/airplane.png" class="img-fluid rating  mr-2" alt="rating"/>Passagens aéreas, de ida/volta</h6>
+                    </div>
+                    <div class="text-center">
+                        <h6 id="texto-destino" class=""><img src="../../images/hotel.png" class="img-fluid rating  mr-2" alt="rating"/>Hotel, Hospedagens e Refeição</h6>
+                    </div>
+                    <div class="text-center">
+                        <h6 id="texto-destino" class=""><img src="../../images/bus.png" class="img-fluid rating  mr-2" alt="rating"/>Transporte aos locais visitados</h6>
+                    </div>
+                    <div class="text-center">
+                        <h6 id="texto-destino" class=""><img src="../../images/life.png" class="img-fluid rating  mr-2" alt="rating"/>Seguro de vida e contra roubos</h6>
+                    </div>
+                </div>   
+                <div class="col-4">
+                    <h6 class="mb-3 text-center font-weight-bold">Roteiro de Viagem</h6>
+                    <h6 id="texto-destino" class="text-left">• Zaanse Schans - bairro rodeado por moinhos de vento e construções antigas.</h6>
+                    <h6 id="texto-destino" class="text-left">• Den Bosch - distrito da cidade com lojas e restaurantes tradicionais.</h6>
+                    <h6 id="texto-destino" class="text-left">• Groningen - cidade vizinha ao extremo norte, com população jovem e ativa.</h6>
+                </div>           
             </div>
         </div>
         <div class="container d-flex justify-content-center mt-5">

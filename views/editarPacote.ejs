@@ -11,9 +11,8 @@
     <div class="jumbotron col-8 mx-auto">
 
       <div class="container col-10">
-        <h1 class="display-6">Editar Pacote</h1>
-        <p class="lead">Você poderá oferecer mais uma opção de viagem para nossos usuários e, em poucos passos, ela já
-          estará no ar. Só precisamos obter algumas informações.</p>
+        <h1 class="display-6 ml-4">Editar Pacote</h1>
+        <p class="lead col-8 text-justify ml-2">Altere as informações do seu pacote, em poucos passos ele será atualizado. Só precisamos que confirme suas informações.</p>
       </div>
   
       <div class="container mt-5">
@@ -96,32 +95,34 @@
                       <span id="input-destino"></span>
                     </div>
                   </div>
-                  <div class="form-row mt-4">
+                  <div class="form-row mt-1">
                     <div class="form-group col-12">
                       <label for="origem">Digite as cidades de saída:</label>
                       <input class="form-control" type="text" name="origem" id="origem" onkeypress="return tabE(this,event)" value="<%=origem.cidade%>, <%=origem.pais%>">
                       <span id="input-origem"></span>
                     </div>
                   </div>
-                  <div class="form-row">
+                  <div class="form-row mt-1">
                     <div class="form-group col-6">
                       <label for="ambiente">Selecione o ambiente que se aplica:</label>
                       <select multiple class="form-control" size="3" name="ambiente" id="ambiente" onkeypress="return tabE(this,event)">
                         <option id="praia">Praia</option>
                         <option id="montanha">Montanha</option>
                         <option id="urbano">Urbano</option>
+                        <option id="resort">Resort</option>
                       </select>
                     </div>
-                    <div class="form-group col-6">
+                    <div class="form-group col-6 mt-1">
                       <label for="atracao">Atrações a serem desfrutadas nessa viagem:</label>
                       <select multiple class="form-control" size="3" name="atracao" id="atracao" onkeypress="return tabE(this,event)">
-                        <option id="resort">Resort</option>
+                        <option id="bom-pra-criancas">Bom para crianças</option>
+                        <option id="vida-noturna">Vida nortuna</option>
                         <option id="museus">Museus</option>
-                        <option id="esportes">Prática de esportes</option>
+                        <option id="pratica-esportes">Prática de esportes</option>
                       </select>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group mt-3">
                     <label for="imagem">Faça o upload das fotos deste pacote:</label>
                     <input type="file" class="form-control-file" name="imagem" id="imagem">
                   </div>
@@ -225,16 +226,24 @@ function GetFormattedDate(newDate) {
       document.getElementById("urbano").setAttribute("selected", "");
       }
 
-      if(atracao == "Resort") {
+      if(ambiente == "Resort") {
       document.getElementById("resort").setAttribute("selected", "");
+      }
+
+      if(atracao == "Bom para crianças") {
+      document.getElementById("bom-pra-criancas").setAttribute("selected", "");
       }
 
       if(atracao == "Museus") {
       document.getElementById("museus").setAttribute("selected", "");
       }
 
+      if(atracao == "Vida noturna") {
+      document.getElementById("vida-noturna").setAttribute("selected", "");
+      }
+
       if(atracao == "Prática de esportes") {
-      document.getElementById("esporte").setAttribute("selected", "");
+      document.getElementById("pratica-esportes").setAttribute("selected", "");
       }
     }
     ambienteSeletor();

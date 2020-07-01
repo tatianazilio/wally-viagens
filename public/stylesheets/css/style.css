@@ -1,5 +1,16 @@
 /* ESTRUTURAS GERAIS */
 
+#texto-destino {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif, Arial;
+  font-size: 14px;
+  color:rgb(22, 22, 22);
+}
+
+#texto-titulo {
+  font-family: "Lucida Grande", "Open Sans", Helvetica, sans-serif, Arial;
+  color:rgb(22, 22, 22);
+}
+
 body {
   font: 14px "Lucida Grande", "Open Sans", Helvetica, sans-serif,  Arial; 
 }
