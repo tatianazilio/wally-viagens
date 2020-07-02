@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
             aereo: DataTypes.BOOLEAN,
             diarias: DataTypes.INTEGER,
             preco: DataTypes.DECIMAL,
-            descricao: DataTypes.STRING,
+            descricao: DataTypes.TEXT,
             imagem: DataTypes.STRING,
         }, {
             tableName: "pacote"

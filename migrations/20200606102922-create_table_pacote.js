@@ -23,7 +23,7 @@ module.exports = {
       aereo: Sequelize.BOOLEAN,
       diarias: Sequelize.INTEGER,
       preco: Sequelize.DECIMAL,
-      descricao: Sequelize.STRING,
+      descricao: Sequelize.TEXT,
       imagem: Sequelize.STRING,
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
