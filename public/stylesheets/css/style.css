@@ -656,4 +656,13 @@ display: none;
   
 }
 
+#titulos-cards {
+  text-align: center;
+}
+
+.card {
+  margin-bottom: 40px;
+  margin-top: 0px;
+}
+
 }

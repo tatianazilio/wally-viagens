@@ -55,7 +55,7 @@
 <!--SEÇÃO VIAGENS EM ALTA-->
 <section class="container destaques mt-5">
   <h3 id="titulos-cards">Viagens em alta</h3>
-  <h5 id="titulos-cards">Os pacotes mais comprados pelos usuários</h5>
+  <h5 id="titulos-cards">Os pacotes mais comprados pelos nossos usuários</h5>
   <div class="row justify-content-around mt-5">
     <% pacotes.forEach((pacote) => { %>
       <div class="card" style="width: 15rem;">
@@ -67,9 +67,11 @@
               <% pacote.ambientes.forEach((ambiente) => { %>
                 <h6><span class="badge badge-secondary"><%= ambiente.nome%></span></h6>
               <% }) %>
-              <% pacote.atracoes.forEach((atracao) => { %>
-                <h6><span class="badge badge-secondary ml-1"><%= atracao.nome%></span></h6>
-              <% }) %>
+              <div class="row container-fluid mb-2">
+                <% pacote.atracoes.forEach((atracao) => { %>
+                  <h6><span class="badge badge-secondary"><%= atracao.nome%></span></h6>
+                <% }) %>
+              </div>            
             </div>
           </div>
               <% if (pacote.aereo) { %>
@@ -98,9 +100,11 @@
               <% pacote.ambientes.forEach((ambiente) => { %>
                 <h6><span class="badge badge-secondary"><%= ambiente.nome%></span></h6>
               <% }) %>
-              <% pacote.atracoes.forEach((atracao) => { %>
-                <h6><span class="badge badge-secondary ml-1"><%= atracao.nome%></span></h6>
-              <% }) %>
+              <div class="row container-fluid mb-2">
+                <% pacote.atracoes.forEach((atracao) => { %>
+                  <h6><span class="badge badge-secondary"><%= atracao.nome%></span></h6>
+                <% }) %>
+              </div>
             </div>
           </div>
             <% if (pacote.aereo) { %>
@@ -131,9 +135,11 @@
               <% pacote.ambientes.forEach((ambiente) => { %>
                 <h6><span class="badge badge-secondary"><%= ambiente.nome%></span></h6>
               <% }) %>
-              <% pacote.atracoes.forEach((atracao) => { %>
-                <h6><span class="badge badge-secondary ml-1"><%= atracao.nome%></span></h6>
-              <% }) %>
+              <div class="row container-fluid mb-2">
+                <% pacote.atracoes.forEach((atracao) => { %>
+                  <h6><span class="badge badge-secondary"><%= atracao.nome%></span></h6>
+                <% }) %>
+              </div>
             </div>
           </div>
             <% if (pacote.aereo) { %>
